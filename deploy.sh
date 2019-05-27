@@ -17,7 +17,7 @@ git add -A
 git commit -m $1
 
 # 如果发布到 https://<USERNAME>.github.io
-git push -f git@github.com:yangfree/vuepress.github.io.git master
+# git push -f git@github.com:yangfree/vuepress.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:yangfree/vuepress.git master:gh-pages
