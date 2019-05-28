@@ -1,6 +1,6 @@
-::: danger
-this is a danger page
-:::
+---
+sidebar: auto
+---
 
 > 这是一个示例页面
 # 第一级标题
@@ -49,3 +49,20 @@ prev: ./some-other-page
 next: false
 ---
 ```
+
+## emoji和提示框
+::: tip
+this is a danger page
+:::
+::: warning
+this is a danger page
+:::
+::: danger
+this is a danger page
+:::
+
+::: danger STOP
+Danger zone, do not proceed
+:::
+
+:tada: :100: 

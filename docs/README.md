@@ -3,7 +3,7 @@ home: true
 heroImage: /home.png
 heroText: Document Website
 tagline: 嘘... 安安静静的写点东西
-actionText: start →
+actionText: Start Web →
 actionLink: /web/
 features:
 - title: 行动派

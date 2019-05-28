@@ -13,22 +13,23 @@ module.exports = {
 	themeConfig: {
 		// 顶部导航
 		nav: [
-			{text: 'Home', link: '/'},
-			{
-				text: 'Web', items: [
-					{text: 'HTML', link: '/web/html/'},
-					{text: 'CSS', link: '/web/css/'},
-					{text: 'javascript', link: '/web/javascript/'},
-				]
-			},
-			{text: 'Python', link: '/categories/'},
+			{text: 'Web', link: '/web/'},
+			{text: 'Python', link: '/python/'},
+			{text: 'RegExp', link: '/regexp/'},
 			{text: 'About', link: '/about/'}
 		],
 
 		// 侧边栏
-		sidebar: 'auto',
+		sidebar: {
+			'/web/': [
+				'',
+				'html',
+				'css',
+				'javascript'
+			]
+		},
 		sidebarDepth: 2, // 默认 1 提取到 h2，0 为禁用，2 为 h2，h3
-		displayAllHeaders: true, // 默认值：false 侧边栏只会显示由当前活动页面的标题组成的链接
+		displayAllHeaders: false, // 默认值：false 侧边栏只会显示由当前活动页面的标题组成的链接
 		activeHeaderLinks: true, // 默认值：true 滚动时通过 hash 高亮侧边栏标题
 
 		// Git 仓库和编辑链接
