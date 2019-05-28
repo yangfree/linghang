@@ -3,7 +3,7 @@ module.exports = {
 	description: '一个关于web前端的静态文档资源站',
 	base: '/vuepress/',
 	head: [
-		['link', {rel: 'icon', href: '/500.png'}]
+		['link', {rel: 'icon', href: '/icon.ico'}]
 	],
 	locales: {
 		'/': {
@@ -35,9 +35,9 @@ module.exports = {
 		repo: 'https://github.com/yangfree/vuepress/', // 你的仓库
 		repoLabel: 'GitHub', // 导航栏上的文本
 
-		editLinks: true,
+		// editLinks: true,
 		// 默认为 "Edit this page"
-		editLinkText: 'Edit this page',
+		// editLinkText: 'Edit this page',
 		lastUpdated: 'Last Updated', // string | boolean
 	}
 };
