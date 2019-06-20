@@ -25,7 +25,8 @@ module.exports = {
 				'',
 				'html',
 				'css',
-				'javascript'
+				'javascript',
+				'react'
 			]
 		},
 		sidebarDepth: 2, // 默认 1 提取到 h2，0 为禁用，2 为 h2，h3
