@@ -317,4 +317,4 @@ class Dialog extends React.Component {
 
 ### 图示
 
-![react生命周期](/web/images/react生命周期.png)
+![react生命周期](../images/react_life.png)
