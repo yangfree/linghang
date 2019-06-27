@@ -262,7 +262,7 @@ class Dialog extends React.Component {
 }
 ```
 
-### 总结
+### 两种创建方式对比总结
 
 1. 函数式
     - 操作简单。
@@ -281,15 +281,54 @@ class Dialog extends React.Component {
     
 ### 复合组件之间传递值
 
-1. 父组件传递值给子组件
-    - 基于属性传递即可(单方向)
-    - 子组件通过`props`获取
+- 父组件传递值给子组件
+    1. 基于属性传递即可(单方向)，子组件通过`props`获取
+    2. 上下文传递: 在父组件中首先设置子组件上下文属性值类型（暂存），然后获取子组件的上下文（设置子组件上下文信息）,最后在子组件中使用传递进来的上下文类型。
+    
+```javascript
+// 需要用facebook的类型验证插件
+import PropTypes from "prop-types";
+
+class Vote extends React.Component {
+  static childContextTypes = {
+      n: PropTypes.number,
+      m: PropTypes.number	
+  };
+  
+  // return值是给子组件设置的上下文
+  getChildContext() {
+  	let {count: {n=0,m=0}} = this.props;
+  	return {
+  		n,
+  		m,
+  	}
+  }
+  
+}
+
+// 在子组件中取用 设置哪个类型才有哪个属性，必须和父组件中类型一致。
+class VoteChild extends React.Component {
+	static contextTypes = {
+		n: PropTypes.number,
+		m: PropTypes.number,
+	};
+	
+	constructor(props, context) {
+		super(props, context)
+	}
+  
+}
+```
 
 后期子组件的信息需要修改: 可以让父组件传递给子组件的信息发生变化，也就是子组件接受的属性发生变化，子组件会重新渲染。触发=》`componentWillReceiveProps`钩子函数。
 
-2. 子组件修改父组件
-    - 把父组件中的一个方法作为属性传递给子组件
-    - 在子组件中，把基于属性把传递进来的方法，在适当的时候执行，相当于在执行父组件的方法，而这个方法完全可以操作父组件中的信息。
+- 子组件修改父组件
+    - 把父组件中的一个方法作为属性或者上下文传递给子组件
+    - 在子组件中，把基于属性或者上下文传递进来的方法，在适当的时候执行，相当于在执行父组件的方法，而这个方法完全可以操作父组件中的信息。
+
+- 平行组件
+    1. 让两个平行组件拥有一个共同的父组件
+    2. redux
 
 ## React中的生命周期函数（钩子函数）
 
@@ -318,3 +357,6 @@ class Dialog extends React.Component {
 ### 图示
 
 ![react生命周期](../images/react_life.png)
+
+
+## Redux
