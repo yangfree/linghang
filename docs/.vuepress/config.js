@@ -25,7 +25,8 @@ module.exports = {
 				'',
 				'html',
 				'css',
-				'javascript',
+        'javascript',
+        'vue',
 				'react'
 			]
 		},

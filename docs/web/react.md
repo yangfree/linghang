@@ -360,3 +360,8 @@ class VoteChild extends React.Component {
 
 
 ## Redux
+
+> 进行状态统一管理的类库（适用于任何技术体系的项目）
+
+1. 只要有两个或者多个组件之间想要实现信息的共享，都可以基于`redux`解决，把共享的信息存储到redux容器中进行管理。
+2. `redux`还可以做临时存储，页面加载的时候把从服务器获取到的数据信息存储到`redux`中，组件渲染需要的数据直接从`redux`中获取。（localStorage）
