@@ -365,3 +365,89 @@ class VoteChild extends React.Component {
 
 1. 只要有两个或者多个组件之间想要实现信息的共享，都可以基于`redux`解决，把共享的信息存储到redux容器中进行管理。
 2. `redux`还可以做临时存储，页面加载的时候把从服务器获取到的数据信息存储到`redux`中，组件渲染需要的数据直接从`redux`中获取。（localStorage）
+
+### Redux核心方法
+
+``` js
+/* 
+ * 创建redux容器
+ *    reducer: 容器管理员
+ * 
+ * 返回的结果:
+ *    dispatch: 任务派发
+ *    getState: 获取容器中的状态
+ *    subscribe: 向事件池中增加方法
+*/
+```
+
+### redux项目使用目录结构
+
+1. `src`下创建`store`文件夹作为整个项目的状态管理文件夹。
+2. `store`文件夹包含:
+    - `index.js`文件: 创建一个状态管理的容器，接收一个管理员（@params: reducer）作为参数。
+    - `actionType.js`文件: 所有行为派发的标识管理
+    - `action`文件夹: 每个模块修改redux容器中的状态，派发的任务都在这(actionCreator) index也是合并所有的action。
+    - `reducer`文件夹: 把所有的reducer合并成为一个reducer 一个store只有一个reducer。合并reducer的时候，为了保证每一个模块管理的状态信息不冲突，在redux中依照模块的名称合并，并且在以合并的时候作为属性名为主，作为最后划分管理的名字。
+    ``` jsx
+      /*
+       * 1. 从redux中解构出合并reducer的方法
+       * 2. 引入文件夹下各个模块的reducer
+       */
+      import { combineReducers } from 'redux';
+
+      import vote from './vote';
+      import personal from './personal';
+      
+      let reducer = combineReducers({
+        vote,
+        personal,
+      });
+
+      export default reducer;
+    ```
+
+### react-redux
+
+``` js
+/* 
+ * @params:
+ *  1. Provider: 根组件，当前项目都在`Provider`组件下，作用就是把创建的`store`可以在整个项目的组件中使用(基于上下文完成)
+ *  2. connect: 高阶组件 
+*/
+import ReactDOM, {render} from "react-dom";
+import {Provider, connect} from "react-redux";
+render(<Provider>
+  // 只容许出现一个子元素
+</Provider>, root);
+```
+
+#### 使用步骤
+
+1. 把我们创建的store挂载到react-redux提供的`Provider`组件（项目根组件）上。
+
+```js
+import store from './store';
+import {Provider, connect} from 'react-redux';
+
+ReactDOM.render(<Provider store={store}>
+  <div>
+    <Button />
+    <Header />
+  </div>
+</Provider>,root);
+```
+
+2. 在组件中使用的时候，我们不直接返回创建的组件，而是返回一个由`connect`高阶组件创建后的组件
+
+```js
+import React from "react";
+import {connect} from 'react-redux';
+
+class SomeComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+ 
+}
+export default connect(state=>(...state), action.vote)(SomeComponent);
+```
