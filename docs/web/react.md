@@ -451,3 +451,80 @@ class SomeComponent extends React.Component {
 }
 export default connect(state=>(...state), action.vote)(SomeComponent);
 ```
+
+## React路由 react-router-dom
+
+``` bash
+yarn add react-router-dom
+```
+
+### BrowserRouter vs HashRouter
+
+> 两种常用的路由，`BrowserRouter`是浏览器路由，`HashRouter`是哈希路由。
+
+- BrowserRouter基于H5中的history API（pushState, replaceState, propsState）来保持UI和URL同步。一般只有当前项目是基于**服务器渲染** 的会使用。
+- HashRouter适用于前后端分离项目（客户端渲染），它是依据相同的页面地址，不同的哈希值，来规划当前页面中的哪一个组件呈现渲染，它基于原生JS构造了一套类似于history API的机制，每一次路由切换都是基于history stack 完成的。
+
+### HashRouter
+
+- 页面后面默认加上'#'。
+- Route 中只能出现一个子元素。
+- 默认情况下会把每一个Route都做校验，哪怕之前就有成功的,`Switch`组件可以解决这个问题。
+- Route 不设置path，会匹配所有路由，一般用在当前匹配都不符合的情况下，认为地址非法做特殊处理。
+- 都不匹配的情况下还可以是用`Redirect`组件进行重定向。to 代表的是重新定向的路由。它可以是字符串，也可以是对象。
+
+``` js
+ /*  Route:
+  *    path: 设置匹配路径 不是严格匹配，当前页面哈希地址只要包含完整它就可以
+  *    exact: 让path匹配严谨  只展示和设置路劲完全相同的组件
+  *    component: 对应路径展示的组件 
+  *    render: 当页面的哈希地址和path匹配，会把render方法执行。（一般在render中进行权限校验）
+  *    strict: exampel /user/    /user/ yes        /user no
+  */
+ ReactDOM.render(<HashRouter>
+  <Switch>
+    <Route path='/' exact component={A}/>
+    <Route path='/user' component={B}/>
+    <Route path='/pay' render={() => {
+      let flag = localStorage.getItem('FLAG');
+      if (flag && flag === 'SAFE') {
+        return <C />;
+      }
+      return "当前环境不安全，请小心支付！！！";
+    }}/>
+    // 如果当前都不匹配，返回404
+    <Route render={() => {
+      return <div>404</div>;
+    }}/>
+    /**
+     * 重新定向到首页 to可以是字符串也可以是对象
+     * {
+     *  pathname: 定向地址
+     *  search: 给定向的地址问好传参，在项目中，有时候我们会根据这个参数来做不同的事情
+     *          （比如统计正常进入首页还是非正常跳转进来的）
+     *  state: 给定向后的组件传递一些信息
+     *  push: 如果设置了这个属性，当前跳转的地址会加入到history stack 中一条记录
+     *  from: 设定当前来源的页面 <Redirect from='/list' to='/list/registered'/>
+     *        如果当前进入的地址是list，我们让其重定向到registered
+     * } 
+    */
+    <Redirect to={{
+      pathname: '/',
+      search: '?page=404'
+    }}/>
+  </Switch>
+</HashRouter>, document.getElementById('root'));
+ ```
+
+### Link和NavLink 
+
+> 都是路由跳转页面，区别是`NavLink`是当前页面的Hash和To的值相等的时候会添加一个`active`样式名称，不仅如此还多了严格模式匹配。
+
+### widthRouter
+
+把一个非路由管控的组件，模拟成路由管控组件。
+
+``` js
+import {  withRouter } from 'react-router-dom';
+export default withRouter(connect()(Nav));
+```
