@@ -406,12 +406,44 @@ class VoteChild extends React.Component {
       export default reducer;
     ```
 
+### redux 中间件
+
+- dedux-logger: 能够在控制台清晰的展示出当前redux操作的流程和信息（原有状态，派发信息，修改后的状态）。
+- redux-thunk: 处理异步的`dispatch`派发。
+
+``` js
+create(payload) {
+  return dispatch=> {
+    setTimeout(()=> {
+      dispatch({
+        type: TYPES.CUSTOM_CREATE,
+        payload,
+      });
+    }, 3000);
+  }
+}
+```
+- redux-promoise: 在`dispatch`派发的时候支持promise异步操作(比如数据请求)。
+
+``` js
+create(payload) {
+  return {
+    type: TYPES.CUSTOM_CREATE,
+    payload: new Promise(resolve => {
+      setTimeout(() => {
+        resolve(payload);
+      }, 3000);
+    })
+  }
+}
+```
+
 ### react-redux
 
 ``` js
 /* 
  * @params:
- *  1. Provider: 根组件，当前项目都在`Provider`组件下，作用就是把创建的`store`可以在整个项目的组件中使用(基于上下文完成)
+ *  1. Provider: 根组件
  *  2. connect: 高阶组件 
 */
 import ReactDOM, {render} from "react-dom";
