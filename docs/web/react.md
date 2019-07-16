@@ -1,4 +1,4 @@
-# react
+# React
 
 `React`是FaceBook公司开发的一款`MVC`[Model(数据层),view(视图层),controller(控制层)]JS框架，其核心思想是**通过数据的改变来影响视图的渲染(数据驱动)**。
 

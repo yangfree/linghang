@@ -14,6 +14,7 @@ module.exports = {
 		// 顶部导航
 		nav: [
 			{text: 'Web', link: '/web/'},
+			{text: 'Node', link: '/node/'},
 			{text: 'Python', link: '/python/'},
 			{text: 'RegExp', link: '/regexp/'},
 			{text: 'About', link: '/about/'}
@@ -28,7 +29,11 @@ module.exports = {
         'javascript',
         'vue',
 				'react'
-			]
+      ],
+      '/node/': [
+        ',',
+        'node'
+      ]
 		},
 		sidebarDepth: 2, // 默认 1 提取到 h2，0 为禁用，2 为 h2，h3
 		displayAllHeaders: false, // 默认值：false 侧边栏只会显示由当前活动页面的标题组成的链接
