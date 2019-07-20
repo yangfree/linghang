@@ -1,7 +1,7 @@
 module.exports = {
 	title: 'WEB Document',
 	description: '一个关于web前端的静态文档资源站',
-	base: '/vuepress/',
+	base: '/',
 	head: [
 		['link', {rel: 'icon', href: '/icon.ico'}]
 	],
