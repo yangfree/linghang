@@ -415,4 +415,4 @@ axios基于`Promise`编写，其本质还是`HttpRequest`对象。
 
 > Promise based HTTP client for the browser and node.js
 
-[axios中文文档](https://www.webblog.vip/vue/2019/02/26/index.html)
+[axios中文文档](https://www.webblog.vip/interaction/2019/02/26/index.html)

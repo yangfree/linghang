@@ -14,4 +14,6 @@
 
 ## MVVM
 
+View ViewModel Model
+
 ## MVC
