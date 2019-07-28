@@ -9,3 +9,4 @@ public/
 .git
 .idea
 landscape/
+node_cache/
