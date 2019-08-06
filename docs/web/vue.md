@@ -1,5 +1,5 @@
 ---
-title: Vue
+title: Vue笔记
 ---
 
 ## vue-cli脚手架的使用
