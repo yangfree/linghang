@@ -16,7 +16,7 @@ module.exports = {
 			{text: 'Web', link: '/web/'},
 			{text: 'Node', link: '/node/'},
 			// {text: 'Python', link: '/python/'},
-			{text: 'RegExp', link: '/regexp/'},
+			// {text: 'RegExp', link: '/regexp/'},
 			{text: 'About', link: '/about/'}
 		],
 
