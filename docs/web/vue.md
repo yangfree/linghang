@@ -409,6 +409,190 @@ methods: {
 }
 ```
 
+## Vuex
+
+`Vuex`是vue.js专门用来管理状态的，以下是它的一个“单向数据流”理念示意图。
+
+![Vuex单向数据流示意图](../images/vuex.png)
+
+脚手架生成目录结构,vuex的简单使用流程如下：
+
+### 创建store对象
+
+在`src`目录下创建`store`文件夹，在该目录下新建`index.js`，引入vue和vuex，接下来创建一个Vuex的实例并且导出。
+
+```js
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+
+});
+
+export default store;
+```
+
+### 挂在store到全局
+
+在`main.js`文件中引入store，并且注入到Vue的实例。
+
+```js
+// ...
+import store from './store';
+
+new Vue({
+  el: '#app',
+  router,
+  store,
+  ...App
+})
+```
+### State
+
+我们需要的初始状态集合，在组件中可以通过`this.$store.state`来获取。现在我们在刚才的`store`中定义一个初始状态count。
+
+```js
+// ...
+
+const store = new Vuex.Store({
+  state: {
+    count: 1,
+  }
+});
+
+export default store;
+```
+
+### getters
+
+Getter相当于vue中的computed计算属性，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算，这里我们可以通过定义vuex的Getter来获取，Getters 可以用于监听、state中的值的变化，返回计算后的结果，这里我们修改Hello World.vue文件如下：
+
+``` vue
+页面上的值: {{this.$store.state.count}}
+getters中的值: {{this.$store.getters.gettersStateCount}}
+```
+在store中的index.js中添加getters对象，并且定义gettersStateCount方法，它有一个参数，即状态`state`
+
+```js
+// ...
+
+const store = new Vuex.Store({
+  state: {
+    count: 1,
+  },
+
+  getters: {
+    gettersStateCount(state) {
+      return state.count + 1;
+    }
+  }
+});
+
+export default store;
+```
+然后在页面上会分别输出1和2.
+
+### Mutations
+
+`Mutations`用来修改状态里的值，现在我们在页面中添加一个增加和减少按钮,分别绑定`addFun`和`reductionFun`两个事件用来控制状态的增加和减少。
+
+``` vue
+页面上的值: {{this.$store.state.count}}
+getters中的值: {{this.$store.getters.gettersStateCount}}
+<br>
+<button type="button" @click="addFun">+1</button>
+<button type="button" @click="reductionFun">-1</button>
+
+<script>
+// ...
+methods: {
+    addFun() {
+      this.$store.commit("add");
+    },
+    reductionFun() {
+      this.$store.commit("reduction");
+    }
+},
+</script>
+```
+
+修改index.js文件，添加mutations，在mutations中定义两个函数，用来对count加1和减1，这里定义的两个方法就是上面commit提交的两个方法如下：
+
+```js
+  mutations: {
+    add(state) {
+      state.count = state.count + 1;
+    },
+    reduction(state) {
+      state.count = state.count - 1;
+    },
+  },
+```
+
+点击增加和减少按钮就会发现实现了状态的更改，但是官方并不建议我们直接修改`state`，而是需要提交`Actions`给`Mutations`,然后在通过`mutations`去修改状态。
+
+### Actions
+
+`Actions`是异步操作，函数接受一个与 `store`实例具有相同方法和属性的 `context`对象，因此你可以调用 `context.commit` 提交一个 `mutation`，或者通过 `context.state` 和 `context.getters` 来获取 `state` 和 `getters`。
+
+我们修改store中index.js文件如下：
+
+```js
+// ...
+const store = new Vuex.Store({
+  state: {
+    count: 1
+  },
+  getters: {
+    getterStateCount(state) {
+      return state.count + 1;
+    }
+  },
+  mutations: {
+    add(state) {
+      state.count = state.count + 1;
+    },
+    reduction(state) {
+      state.count = state.count - 1;
+    },
+  },
+  actions: {
+    addFun(context) {
+      context.commit('add');
+    },
+    reductionFun(context) {
+      context.commit('reduction');
+    }
+  }
+});
+
+export default store;
+```
+
+并且修改vue组件中的方法:
+
+```vue
+<script>
+// ...
+methods: {
+    addFun() {
+      this.$store.dispatch("add");
+    },
+    reductionFun() {
+      this.$store.dispatch("reduction");
+    }
+},
+</script>
+```
+结果和刚才一样，只不过是加了一个提交过程，所以整个Vuex的过程为：
+
+1. 通过组件`dispatch`一个方法给`Actions`
+2. 在`Actions`中通过context`commit`这个两个方法给`Mutations`
+3. 在`Mutations`中写这两个方法完成对状态的修改
+4. 然后通过`render`完成页面数据的改变。
+
 ## axios
 
 axios基于`Promise`编写，其本质还是`HttpRequest`对象。
