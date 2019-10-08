@@ -47,6 +47,18 @@ npm run dev
 - `package.json`: 项目配置清单 
 - `README.md`: 项目介绍
 
+### vue-cli3.xx
+
+```bash
+# 卸载原来版本
+npm uninstall vue-cli -g
+# 需要node8.9以上版本
+npm install @vue/cli -g
+# 构建命令
+vue create <projectname>
+```
+
+
 ## vue基础
 
 - Vue.js是基于`ECMAScript5`的渐进式框架。
@@ -269,7 +281,7 @@ data: obj
 
 ### 生命周期示意图
 
-![Vue2生命周期示意图](../images/lifecycle.png);
+![Vue2生命周期示意图](../public/images/lifecycle.png);
 
 ### 钩子函数
 
@@ -394,8 +406,8 @@ MyComponent2,
 
 ### 组件传值
 
-- 子传父: 父亲通过属性传递，子组件通过`props`接收。
-- 父穿子: 子组件通过`this.$emit('事件名称',值)`发射事件，子组件通过`@事件名称="事件名称"`接收。
+- 父传子: 父亲通过属性传递，子组件通过`props`接收。
+- 子传父: 子组件通过`this.$emit('事件名称',值)`发射事件，子组件通过`@事件名称="事件名称"`接收。
 
 ``` javascript
 // 子组件通过$emit发射
@@ -413,7 +425,7 @@ methods: {
 
 `Vuex`是vue.js专门用来管理状态的，以下是它的一个“单向数据流”理念示意图。
 
-![Vuex单向数据流示意图](../images/vuex.png)
+![Vuex单向数据流示意图](../public/images/vuex.png)
 
 脚手架生成目录结构,vuex的简单使用流程如下：
 

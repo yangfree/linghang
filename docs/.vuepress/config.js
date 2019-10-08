@@ -15,9 +15,10 @@ module.exports = {
 		nav: [
 			{text: 'Web', link: '/web/'},
 			{text: 'Node', link: '/node/'},
-			// {text: 'Python', link: '/python/'},
-			// {text: 'RegExp', link: '/regexp/'},
-			{text: 'About', link: '/about/'}
+			{text: 'Webpack', link: '/webpack/'},
+			{text: 'About', link: '/about/'},
+		// {text: 'Python', link: '/python/'},
+		// {text: 'RegExp', link: '/regexp/'},
 		],
 
 		// 侧边栏

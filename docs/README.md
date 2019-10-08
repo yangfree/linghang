@@ -1,8 +1,8 @@
 ---
 home: true
-heroImage: /home.png
+# heroImage: /hero.png
 heroText: Document Website
-tagline: 嘘... 安安静静的写点东西
+# tagline: 
 actionText: Start Web →
 actionLink: /web/
 features:
