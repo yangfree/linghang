@@ -288,7 +288,7 @@ const vm = new Vue({
 
 ### 生命周期示意图
 
-<!-- ![Vue2生命周期示意图](../public/images/lifecycle.png) -->
+![Vue2生命周期示意图](../public/images/lifecycle.png)
 
 ### 钩子函数
 
@@ -435,7 +435,7 @@ Child @listenChildSend = 'listenChildSend' / >
 
 `Vuex` 是vue.js专门用来管理状态的，以下是它的一个“单向数据流”理念示意图。
 
-<!-- ![Vuex单向数据流示意图](../public/images/vuex.png) -->
+![Vuex单向数据流示意图](../public/images/vuex.png)
 
 脚手架生成目录结构, vuex的简单使用流程如下：
 

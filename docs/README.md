@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /hero.png
+heroImage: /hero.png
 heroText: Document Website
 # tagline: 
 actionText: Start Web →
