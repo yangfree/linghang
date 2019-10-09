@@ -1,7 +1,8 @@
 # Css常见知识点
-> 记录`css`中的一些东西，它可以是用法或者是一些坑。
 
-## `css`中的多余隐藏以...结尾。
+> 记录 `css` 中的一些东西，它可以是用法或者是一些坑。
+
+## `css` 中的多余隐藏以... 结尾。
 
 ### 单行隐藏
 
@@ -31,7 +32,7 @@
 
 ### 跨浏览器实现
 
-- 利用`css`伪元素定位来实现，缺点是每个浏览器解析不太一样，看起来不太自然。
+* 利用 `css` 伪元素定位来实现，缺点是每个浏览器解析不太一样，看起来不太自然。
 
 ``` css
 .box-demo {
@@ -56,7 +57,7 @@
 }
 ```
 
-- `JavaScript`+`css`实现
+* `JavaScript` + `css` 实现
 
 ``` html
 <div id="ellipsis" class="ellipsis">
@@ -94,15 +95,15 @@ wordsHide(30, 'ellipsis');
 
 ## position
 
-关于定位属性`position`一共有五个值，分别是`inherit`,`static`,`relative`,`absolute`和`fixed`,定位会改变元素的形态，所有的元素均转化为块级元素。
+关于定位属性 `position` 一共有五个值，分别是 `inherit` , `static` , `relative` , `absolute` 和 `fixed` , 定位会改变元素的形态，所有的元素均转化为块级元素。
 
-- `inherit`: 规定应该从父元素继承`position`属性的值。
-- `static`: 元素正常显示，默认值。
-- `relative`: 相对定位，元素相对于自身位置进行定位，元素任然保持其未定位前的状态，它原本所占的空间仍然保留。
-- `absolute`: 绝对定位，元素脱离文档流，相对于其第一个设置了除`static`定位以外的父元素进行定位，并且会转化为块级元素。
-- `fixed`: 固定定位，元素脱离文档流，相对于浏览器窗口进行定位，并且会转化为块级元素。
+* `inherit` : 规定应该从父元素继承 `position` 属性的值。
+* `static` : 元素正常显示，默认值。
+* `relative` : 相对定位，元素相对于自身位置进行定位，元素任然保持其未定位前的状态，它原本所占的空间仍然保留。
+* `absolute` : 绝对定位，元素脱离文档流，相对于其第一个设置了除 `static` 定位以外的父元素进行定位，并且会转化为块级元素。
+* `fixed` : 固定定位，元素脱离文档流，相对于浏览器窗口进行定位，并且会转化为块级元素。
 
-定位经常会与`z-index`一起使用，`z-index`的值为数字，值越大，元素层级越高。
+定位经常会与 `z-index` 一起使用， `z-index` 的值为数字，值越大，元素层级越高。
 
 ## 盒子水平垂直居中问题
 
@@ -112,13 +113,13 @@ wordsHide(30, 'ellipsis');
 
 ``` html
 <body>
-<div class="out">
-    <div class="inner"></div>
-</div>
+    <div class="out">
+        <div class="inner"></div>
+    </div>
 </body>
 ```
 
-### (一)绝对定位+`auto`
+### (一)绝对定位+ `auto` 
 
 ``` scss
  position: absolute;
@@ -129,7 +130,7 @@ wordsHide(30, 'ellipsis');
  margin: auto;
 ```
 
-### (二)绝对定位+`负边距`
+### (二)绝对定位+ `负边距` 
 
 ``` scss
 position: absolute;
@@ -147,7 +148,7 @@ justify-content: center;
 align-items: center;
 ```
 
-### (四)知道父子盒子的高度，利用高度差和`padding`
+### (四)知道父子盒子的高度，利用高度差和 `padding` 
 
 ``` scss
 box-sizing: border-box;
@@ -167,7 +168,7 @@ left: 50%;
 transform:translate(-50%,-50%);
 ```
 
-### (六)`margin` + `table-cell`
+### (六) `margin` + `table-cell` 
 
 ``` scss
 /*父元素*/
@@ -180,27 +181,29 @@ vertical-align: middle;
 margin: 0 auto;
 ```
 
-
 ## flex布局
 
-任何容器都可以指定为`flex`布局。
+任何容器都可以指定为 `flex` 布局。
 
 ``` css
 /* 块级元素 */
 .box {
-  display: flex;
+    display: flex;
 }
+
 /* 行内元素 */
 span {
-  display: inline-flex;
+    display: inline-flex;
 }
+
 /* webkit内核必须加前缀 */
 .box {
-  display: -webkit-flex;
-  display: flex;
+    display: -webkit-flex;
+    display: flex;
 }
 ```
-**注 :** 设为`flex`布局后，子元素的`float`, `clear`, `vertical-align`属性将失效。
+
+**注 :** 设为 `flex` 布局后，子元素的 `float` , `clear` , `vertical-align` 属性将失效。
 
 ### 容器的属性
 
@@ -213,28 +216,28 @@ span {
 
 #### flex-direction属性
 
-`flex-direction`属性决定了容器里子元素的排列方向。
+`flex-direction` 属性决定了容器里子元素的排列方向。
 
 ``` css
 .box {
-  /* 默认值 水平方向 从左到右排列*/
-  flex-direction: row; 
-  /* 水平方向  从右向左排列 */
-  flex-direction: row-reverse;
-  /* 垂直方向 从上到下排列 */
-  flex-direction: column; 
-  /* 垂直方向，从下到上排列 */
-  flex-direction: column-reverse; 
+    /* 默认值 水平方向 从左到右排列*/
+    flex-direction: row;
+    /* 水平方向  从右向左排列 */
+    flex-direction: row-reverse;
+    /* 垂直方向 从上到下排列 */
+    flex-direction: column;
+    /* 垂直方向，从下到上排列 */
+    flex-direction: column-reverse;
 }
 ```
 
 ####  flex-wrap属性
 
-定义如何换行，它有三个值`nowrap`/(默认)不换行，`wrap`/ 换行，起始行在上方, `wrap-reverse`/ 换行，起始行在下方。
+定义如何换行，它有三个值 `nowrap` /(默认)不换行， `wrap` / 换行，起始行在上方, `wrap-reverse` / 换行，起始行在下方。
 
 ``` css
 .box {
-  flex-wrap: nowrap | wrap | wrap-reverse;
+    flex-wrap: nowrap | wrap | wrap-reverse;
 }
 ```
 
@@ -244,26 +247,26 @@ flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认
 
 ``` css
 .box {
-  flex-flow: <flex-direction> || <flex-wrap>;
+    flex-flow: <flex-direction> || <flex-wrap>;
 }
 ```
 
 #### justify-content属性
 
-`justify-content`属性定义了子元素的对齐方式
+`justify-content` 属性定义了子元素的对齐方式
 
 ``` css
 .box {
-  /* 默认值 左对齐 */
-  justify-content: flex-start;
-  /* 右对齐 */
-  justify-content: end;
-  /* 居中 */
-  justify-content: center;
-  /* 两端对齐 子元素之间距离相等 */
-  justify-content: space-between;
-  /* 子元素两侧的间隔相等 */
-  justify-content: space-around;
+    /* 默认值 左对齐 */
+    justify-content: flex-start;
+    /* 右对齐 */
+    justify-content: end;
+    /* 居中 */
+    justify-content: center;
+    /* 两端对齐 子元素之间距离相等 */
+    justify-content: space-between;
+    /* 子元素两侧的间隔相等 */
+    justify-content: space-around;
 }
 ```
 
@@ -273,38 +276,38 @@ align-items属性定义了子元素在垂直方向的对齐方式。
 
 ``` css
 .box {
-  /* 默认值 如果未设置高度，则高度是整个容器的高度 */
-  align-items: stretch;
-  /* 垂直方向顶端对齐 */
-  align-items: flex-start;
-  /* 垂直方向底端对齐 */
-  align-items: flex-end;
-  /* 垂直居中 */
-  align-items: center;
-  /* 子元素第一行文字基线对齐 */
-  align-items: baseline;
+    /* 默认值 如果未设置高度，则高度是整个容器的高度 */
+    align-items: stretch;
+    /* 垂直方向顶端对齐 */
+    align-items: flex-start;
+    /* 垂直方向底端对齐 */
+    align-items: flex-end;
+    /* 垂直居中 */
+    align-items: center;
+    /* 子元素第一行文字基线对齐 */
+    align-items: baseline;
 }
 ```
 
 #### align-content属性
 
-`align-content`属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+`align-content` 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
 
 ``` css
 .box {
-  /* 多行子元素充满整个容器高度 */
-  align-content: stretch;
-  /* 多行子元素基于容器顶端对齐 */
-  align-content: flex-start;
-  /* 多行子元素基于容器底端对齐 */
-  align-content: flex-end;
-  /* 多行子元素在容器中居中 */
-  align-content: center;
-  /* 多行子元素基于容器两端对齐  间隔相等*/
-  align-content: space-between;
-  /* 多行子元素两侧间隔相等 所以距离顶端和底端是两行子元素之间距离的一半*/
-  align-content: space-around;
-  
+    /* 多行子元素充满整个容器高度 */
+    align-content: stretch;
+    /* 多行子元素基于容器顶端对齐 */
+    align-content: flex-start;
+    /* 多行子元素基于容器底端对齐 */
+    align-content: flex-end;
+    /* 多行子元素在容器中居中 */
+    align-content: center;
+    /* 多行子元素基于容器两端对齐  间隔相等*/
+    align-content: space-between;
+    /* 多行子元素两侧间隔相等 所以距离顶端和底端是两行子元素之间距离的一半*/
+    align-content: space-around;
+
 }
 ```
 
@@ -319,71 +322,79 @@ align-items属性定义了子元素在垂直方向的对齐方式。
 
 #### order属性
 
-`order`属性定义子元素的排列顺序。数值越小，排列越靠前，默认为0
+`order` 属性定义子元素的排列顺序。数值越小，排列越靠前，默认为0
 
 ``` css
 .item {
-  order: <integer>;
+    order: <integer>;
 }
 ```
 
 #### flex-grow属性
 
-`flex-grow`属性定义子元素的放大比例，默认为0，即如果存在剩余空间，也不放大。
+`flex-grow` 属性定义子元素的放大比例，默认为0，即如果存在剩余空间，也不放大。
 
 ``` css
 .item {
-  flex-grow: <number>; /* default 0 */
+    flex-grow: <number>;
+    /* default 0 */
 }
 ```
-如果所有子元素的`flex-grow`属性都为1，则它们将等分剩余空间（如果有的话）。如果一个子元素的`flex-grow`属性为2，其他子元素都为1，则前者占据的剩余空间将比其他项多一倍。
+
+如果所有子元素的 `flex-grow` 属性都为1，则它们将等分剩余空间（如果有的话）。如果一个子元素的 `flex-grow` 属性为2，其他子元素都为1，则前者占据的剩余空间将比其他项多一倍。
 
 #### flex-shrink属性
 
-`flex-shrink`属性定义了子元素的缩小比例，默认为1，即如果空间不足，该子元素将缩小.
+`flex-shrink` 属性定义了子元素的缩小比例，默认为1，即如果空间不足，该子元素将缩小.
 
 ``` css
 .item {
-  flex-shrink: <number>; /* default 1 */
+    flex-shrink: <number>;
+    /* default 1 */
 }
 ```
+
 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
 
 负值对该属性无效。
 
 #### flex-basis属性
 
-`flex-basis`属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+`flex-basis` 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
 
 ``` css
 .item {
-  flex-basis: <length> | auto; /* default auto */
+    flex-basis: <length> | auto;
+    /* default auto */
 }
 ```
-它可以设为跟`width`或`height`属性一样的值（比如350px），则项目将占据固定空间。
+
+它可以设为跟 `width` 或 `height` 属性一样的值（比如350px），则项目将占据固定空间。
 
 #### flex属性
 
-`flex`属性是`flex-grow`, `flex-shrink` 和 `flex-basis`的简写，默认值为0 1 auto。后两个属性可选。
+`flex` 属性是 `flex-grow` , `flex-shrink` 和 `flex-basis` 的简写，默认值为0 1 auto。后两个属性可选。
 
 ``` css
 .item {
-  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+    flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>]
 }
 ```
+
 该属性有两个快捷值：**auto (1 1 auto)** 和 **none (0 0 auto)**。
 
 建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
 
 #### align-self属性
 
-`align-self`属性允许单个项目有与其他项目不一样的对齐方式，可覆盖`align-items`属性。默认值为`auto`，表示继承父元素的`align-items`属性，如果没有父元素，则等同于`stretch`。
+`align-self` 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 `align-items` 属性。默认值为 `auto` ，表示继承父元素的 `align-items` 属性，如果没有父元素，则等同于 `stretch` 。
 
 ``` css
 .item {
-  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
 ```
+
 该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
 
 ## 鼠标经过图片放大（带过渡效果）
@@ -397,11 +408,13 @@ align-items属性定义了子元素在垂直方向的对齐方式。
     border: 1px solid #ccc;
     margin: 10px auto;
 }
+
 .image-box img {
     width: 100%;
     height: 100%;
     transition: all 0.5s;
 }
+
 .image-box img:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);

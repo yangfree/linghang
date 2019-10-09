@@ -3,10 +3,10 @@ Thumbs.db
 db.json
 *.log
 node_modules/
-public/
 .deploy*/
 .vscode
 .git
 .idea
 landscape/
 node_cache/
+/docs/dist/*
