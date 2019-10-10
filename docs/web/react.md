@@ -378,7 +378,7 @@ class VoteChild extends React.Component {
 
 ### 图示
 
-![react生命周期](../public/images/react_life.png)
+![react生命周期](/images/react_life.png)
 
 ## Redux
 
