@@ -1,4 +1,7 @@
-# 原生JS（下）
+---
+title: 原生JS（下）
+sidebar: auto
+---
 
 ## 数组
 

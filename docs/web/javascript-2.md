@@ -1,4 +1,7 @@
-# 原生JS（中）
+---
+title: 原生JS（中）
+sidebar: auto
+---
 
 ## javascipt盒子模型
 

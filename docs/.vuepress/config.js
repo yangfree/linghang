@@ -13,7 +13,49 @@ module.exports = {
 	themeConfig: {
 		// 顶部导航
 		nav: [
-			{ text: 'Web', link: '/web/' },
+			{
+				text: 'Web', items: [
+					{
+						text: 'Html',
+						link: '/web/html'
+					},
+					{
+						text: 'Css',
+						link: '/web/css'
+					},
+					{
+						text: 'JavaScript',
+						items: [
+							{
+								text: 'Js-上',
+								link: '/web/javascript-1'
+							},
+							{
+								text: 'Js-中',
+								link: '/web/javascript-2'
+							},
+							{
+								text: 'Js-下',
+								link: '/web/javascript-3'
+							},
+						]
+					},
+					{
+						text: 'Frame',
+						items: [
+							{
+								text: 'Vue',
+								link: '/web/vue'
+							},
+							{
+								text: 'React',
+								link: '/web/react'
+							},
+						]
+					}
+
+				]
+			},
 			{ text: 'Node', link: '/node/' },
 			{ text: 'Webpack', link: '/webpack/' },
 			{ text: 'About', link: '/about/' },
@@ -25,13 +67,6 @@ module.exports = {
 		sidebar: {
 			'/web/': [
 				'',
-				'html',
-				'css',
-				'javascript-1',
-				'javascript-2',
-				'javascript-3',
-				'vue',
-				'react'
 			],
 			'/node/': [
 				',',

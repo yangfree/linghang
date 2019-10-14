@@ -1,4 +1,7 @@
-# Vue笔记
+---
+title: Vue笔记
+sidebar: auto
+---
 
 ## vue-cli脚手架的使用
 
@@ -233,55 +236,6 @@ const vm = new Vue({
 * `.right` 
 * `.middel` 
 
-### 一些细节
-
-* 可以通过全局 config.keyCodes 对象自定义按键修饰符别名:
-
-    
-
-``` javascript
-    // 可以使用 `v-on:keyup.f1` 
-    Vue.config.keyCodes.f1 = 112
-```
-
-* 你也可直接将 KeyboardEvent.key 暴露的任意有效按键名转换为 kebab-case 来作为修饰符：
-
-    
-
-``` javascript
-    < input @keyup.page - down = "onPageDown" >
-    // 在上面的例子中，处理函数仅在 $event.key === 'PageDown' 时被调用。
-```
-
-* 使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 `v-on:click.prevent.self` 会阻止所有的点击，而 `v-on:click.self.prevent` 只会阻止对元素自身的点击。
-
-* 单页面防止闪烁
-
-``` css
-[v-cloak] {
-    display: none
-}
-```
-
-* 阻值修改已有属性
-
-* Object.freeze()
-
-```js
-let obj = {
-    name: 'Kizz',
-    age: 8
-}
-
-// 使用方式 锁定data的数据为obj且不可修改.
-Object.freeze(obj);
-
-const vm = new Vue({
-    el: '#app'
-    data: obj
-});
-```
-
 ## Vue生命周期图和钩子函数
 
 > 组件从被创建到被摧毁所经历的各种状态变化就是一个组件的生命周期，在状态转换时，都有对应的钩子函数, 钩子函数会自动调用执行，我们只需提供对应的代码即可。
@@ -429,6 +383,43 @@ Child @listenChildSend = 'listenChildSend' / >
             console.log(data);
         }
     }
+```
+
+## Vue Router
+
+官方文档: [https://router.vuejs.org/zh/](https://router.vuejs.org/zh/)
+
+### 下载
+
+``` bash
+npm install vue-router --save
+```
+
+### 使用
+
+``` js
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+const roters = [{
+    path: '/',
+    component: 'Home',
+}, {
+    path: 'list',
+    component: 'List',
+    name: 'list'
+}]
+
+const router = new VueRouter({
+    routers,
+});
+
+const app = {
+    el: '#app',
+    router,
+}
 ```
 
 ## Vuex
