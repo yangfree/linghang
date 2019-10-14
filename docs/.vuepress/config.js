@@ -57,7 +57,7 @@ module.exports = {
 				]
 			},
 			{ text: 'Node', link: '/node/' },
-			{ text: 'Webpack', link: '/webpack/' },
+			// { text: 'Webpack', link: '/webpack/' },
 			{ text: 'About', link: '/about/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},

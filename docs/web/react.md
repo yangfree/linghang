@@ -228,7 +228,7 @@ let render = (JSX, container, callbak) => {
     - 如果是函数式声明，就把它当作函数执行，里面的 `this` 指向 `window` ，把函数返回的JSX元素进行渲染。
     - 如果是类式声明组件，会把当前类 `new` 执行，创建一个类的实例，里面的 `this` 指向当前实例，执行render方法把类中JSX进行渲染。所以类式声明的组件必须要有一个 `render` 方法，方法中返回JSX元素。
 
-``` js
+``` jsx
 import React from 'react';
 
 export default function Dialog(props) {
@@ -239,20 +239,15 @@ export default function Dialog(props) {
     title = lx === 0 ? '系统提示' : '系统警告';
 
     return <section >
-        <
-        h3 > {
-            title
-        } < /h3> <
-        div > {
-            con
-        } < /div> <
-        /section>;
+        <h3 > {title} < /h3> 
+        <div > {con} </div> 
+        </section > ;
 }
 ```
 
 * 基于继承 `component` 类来创建组件
 
-``` js
+``` jsx
 class Dialog extends React.Component {
     constructor(props) {
         // 在继承父类私有的时候，就把属性挂载到当前实例上
@@ -270,10 +265,9 @@ class Dialog extends React.Component {
     // render必须存在 切必须返回jsx对象
     render() {
         return <section >
-            <
-            h3 > 系统提示 < /h3> <
-            div > 2 < /div> <
-            /section>;
+            <h3 > 系统提示 </h3> 
+            <div > 2 </div> 
+            </section > ;
     }
 }
 ```
@@ -486,7 +480,7 @@ create(payload) {
 
 ### react-redux
 
-``` js
+``` jsx
 /* 
  * @params:
  *  1. Provider: 根组件
@@ -501,33 +495,25 @@ import {
 } from "react-redux";
 render( < Provider >
         // 只容许出现一个子元素
-        <
-        /Provider>, root);
+        </Provider>, root);
 ```
 
 #### 使用步骤
 
 1. 把我们创建的store挂载到react-redux提供的 `Provider` 组件（项目根组件）上。
 
-``` js
+``` jsx
 import store from './store';
 import {
     Provider,
     connect
 } from 'react-redux';
 
-ReactDOM.render( < Provider store = {
-            store
-        } >
-        <
-        div >
-        <
-        Button / >
-        <
-        Header / >
-        <
-        /div> <
-        /Provider>,root);
+ReactDOM.render( < Provider store = {store} >
+    <div >
+    <Button / >
+    <Header / >
+    </div> </Provider > , root);
 ```
 
 2. 在组件中使用的时候，我们不直接返回创建的组件，而是返回一个由 `connect` 高阶组件创建后的组件
@@ -568,7 +554,7 @@ yarn add react-router-dom
 * Route 不设置path，会匹配所有路由，一般用在当前匹配都不符合的情况下，认为地址非法做特殊处理。
 * 都不匹配的情况下还可以是用 `Redirect` 组件进行重定向。to 代表的是重新定向的路由。它可以是字符串，也可以是对象。
 
-``` js
+``` jsx
  /*  Route:
 
   +    path: 设置匹配路径 不是严格匹配，当前页面哈希地址只要包含完整它就可以
@@ -579,20 +565,10 @@ yarn add react-router-dom
 
   */
  ReactDOM.render( < HashRouter >
-         <
-         Switch >
-         <
-         Route path = '/'
-         exact component = {
-             A
-         }
-         /> <
-         Route path = '/user'
-         component = {
-             B
-         }
-         /> <
-         Route path = '/pay'
+         <Switch >
+         <Route path = '/'
+         exact component = {A}/> <Route path = '/user'
+         component = {B}/> <Route path = '/pay'
          render = {
              () => {
                  let flag = localStorage.getItem('FLAG');
@@ -601,40 +577,33 @@ yarn add react-router-dom
                  }
                  return "当前环境不安全，请小心支付！！！";
              }
-         }
-         />
+         }/>
          // 如果当前都不匹配，返回404
-         <
-         Route render = {
+         <Route render = {
              () => {
                  return <div > 404 < /div>;
              }
-         }
-         />
-         /**
+         }/>
 
-          * 重新定向到首页 to可以是字符串也可以是对象
-          * {
-          *  pathname: 定向地址
-          *  search: 给定向的地址问好传参，在项目中，有时候我们会根据这个参数来做不同的事情
-          *          （比如统计正常进入首页还是非正常跳转进来的）
-          *  state: 给定向后的组件传递一些信息
-          *  push: 如果设置了这个属性，当前跳转的地址会加入到history stack 中一条记录
-          *  from: 设定当前来源的页面 <Redirect from='/list' to='/list/registered'/>
-          *        如果当前进入的地址是list，我们让其重定向到registered
-          * } 
+        /**
+         * 重新定向到首页 to可以是字符串也可以是对象
+         * 
+         *  pathname: 定向地址
+         *  search: 给定向的地址问好传参，在项目中，有时候我们会根据这个参数来做不同的事情
+         *          （比如统计正常进入首页还是非正常跳转进来的）
+         *  state: 给定向后的组件传递一些信息
+         *  push: 如果设置了这个属性，当前跳转的地址会加入到history stack 中一条记录
+         *  from: 设定当前来源的页面 <Redirect from='/list' to='/list/registered'/>
+         *        如果当前进入的地址是list，我们让其重定向到registered
+         * 
+         */
 
-          */
-         <
-         Redirect to = {
+         <Redirect to = {
              {
                  pathname: '/',
                  search: '?page=404'
              }
-         }
-         /> <
-         /Switch> <
-         /HashRouter>, document.getElementById('root'));
+         }/> </Switch > </HashRouter>, document.getElementById('root'));
 ```
 
 ### Link和NavLink 
