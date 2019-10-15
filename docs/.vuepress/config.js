@@ -27,16 +27,12 @@ module.exports = {
 						text: 'JavaScript',
 						items: [
 							{
-								text: 'Js-上',
-								link: '/web/javascript-1'
+								text: 'Js',
+								link: '/web/javascript'
 							},
 							{
-								text: 'Js-中',
-								link: '/web/javascript-2'
-							},
-							{
-								text: 'Js-下',
-								link: '/web/javascript-3'
+								text: 'ES6',
+								link: '/web/es6'
 							},
 						]
 					},
@@ -85,5 +81,5 @@ module.exports = {
 		// 默认为 "Edit this page"
 		// editLinkText: 'Edit this page',
 		lastUpdated: 'Last Updated', // string | boolean
-	}
+	},
 };

@@ -1,6 +1,8 @@
 ---
 title: Vue笔记
 sidebar: auto
+prev: ./es6
+next: ./react
 ---
 
 ## vue-cli脚手架的使用

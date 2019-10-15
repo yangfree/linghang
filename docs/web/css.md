@@ -1,6 +1,8 @@
 ---
 title: Css常见知识点
 sidebar: auto
+prev: ./html
+next: ./javascript
 ---
 
 > 记录 `css` 中的一些东西，它可以是用法或者是一些坑。
