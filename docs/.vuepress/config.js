@@ -52,8 +52,23 @@ module.exports = {
 
 				]
 			},
+			{
+				text: 'Webpack', items: [
+					{
+						text: 'webpack基础',
+						link: '/webpack/webpack-1'
+					},
+					{
+						text: 'webpack优化',
+						link: '/webpack/webpack-2'
+					},
+					{
+						text: 'webpack原理',
+						link: '/webpack/webpack-3'
+					}
+				]
+			},
 			{ text: 'Node', link: '/node/' },
-			// { text: 'Webpack', link: '/webpack/' },
 			{ text: 'About', link: '/about/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},
