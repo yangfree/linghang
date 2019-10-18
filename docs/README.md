@@ -12,5 +12,5 @@ features:
   details: 喜欢一切简约的事物和人，比如这个主题，比如两点一线的北漂生活，平淡中透露着些许自娱自乐。
 - title: 理想派
   details: 始终坚定不移，始终保留自己的底线和坚持，理想着现实，现实着理想，相信有一天终会拨开云天见日光。
-footer: Copyright © 2019-05-27 | Technical Documentation Website 
+footer: Copyright © 2016 - 2019 | updating... ... 
 ---

@@ -16,8 +16,13 @@ module.exports = {
 			{
 				text: 'Web', items: [
 					{
-						text: 'Html',
-						link: '/web/html'
+						text: 'MadeHero',
+						items: [
+							{
+								text: 'read',
+								link: '/web/read'
+							}
+						]
 					},
 					{
 						text: 'Css',
@@ -68,7 +73,7 @@ module.exports = {
 					}
 				]
 			},
-			{ text: 'Node', link: '/node/' },
+			// { text: 'Node', link: '/node/' },
 			{ text: 'About', link: '/about/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},
