@@ -370,13 +370,144 @@ Object.fromEntries([
 
 ## Proxy元编程
 
+* 定义：修改某些操作的默认行为
+* 声明： `const proxy = new Proxy(target, handler)` 
+* 入参
+  + `target` ：拦截的目标对象
+  + `handler` ：定制拦截行为
+* 方法
+  + `Proxy.revocable()` ：返回可取消的Proxy实例(返回{ proxy, revoke }，通过revoke()取消代理)
+* 拦截方式
+  + `get()` ：拦截对象属性读取
+  + `set()` ：拦截对象属性设置，返回布尔值
+  + `has()` ：拦截对象属性检查k in obj，返回布尔值
+  + `deleteProperty()` ：拦截对象属性删除delete obj[k]，返回布尔值
+  + `defineProperty()` ：拦截对象属性定义 `Object.defineProperty()` 、 `Object.defineProperties()` ，返回布尔值
+  + `ownKeys()` ：拦截对象属性遍历 `for-in` 、 `Object.keys()` 、 `Object.getOwnPropertyNames()` 、 `Object.getOwnPropertySymbols()` ，返回数组
+  + `getOwnPropertyDescriptor()` ：拦截对象属性描述读取 `Object.getOwnPropertyDescriptor()` ，返回对象
+  + `getPrototypeOf()` ：拦截对象原型读取 `instanceof` 、 `Object.getPrototypeOf()` 、 `Object.prototype.__proto__` 、 `Object.prototype.isPrototypeOf()` 、 `Reflect.getPrototypeOf()` ，返回对象
+  + `setPrototypeOf()` ：拦截对象原型设置 `Object.setPrototypeOf()` ，返回布尔值
+  + `isExtensible()` ：拦截对象是否可扩展读取 `Object.isExtensible()` ，返回布尔值
+  + `preventExtensions()` ：拦截对象不可扩展设置 `Object.preventExtensions()` ，返回布尔值
+  + `apply()` ：拦截Proxy实例作为函数调用 `proxy()、proxy.apply()、proxy.call()` 
+  + `construct()` ：拦截Proxy实例作为构造函数调用 `new proxy()` 
+* 应用场景
+  + `Proxy.revocable()` ：不允许直接访问对象，必须通过代理访问，一旦访问结束就收回代理权不允许再次访问
+  + `get()` ：读取未知属性报错、读取数组负数索引的值、封装链式操作、生成DOM嵌套节点
+  + `set()` ：数据绑定(Vue数据绑定实现原理)、确保属性值设置符合要求、防止内部属性被外部读写
+  + `has()` ：隐藏内部属性不被发现、排除不符合属性条件的对象
+  + `deleteProperty()` ：保护内部属性不被删除
+  + `defineProperty()` ：阻止属性被外部定义
+  + `ownKeys()` ：保护内部属性不被遍历
+* 重点难点
+  + 要使 `Proxy` 起作用，必须针对实例进行操作，而不是针对目标对象进行操作
+  + 没有设置任何拦截时，等同于直接通向原对象
+  + 属性被定义为不可读写/扩展/配置/枚举时，使用拦截方法会报错
+  + 代理下的目标对象，内部this指向 `Proxy` 代理
+
 ## Reflect对象
+
+* 定义：保持Object方法的默认行为
+* 方法
+  + `get()` ：返回对象属性
+  + `set()` ：设置对象属性，返回布尔值
+  + `has()` ：检查对象属性，返回布尔值
+  + `deleteProperty()` ：删除对象属性，返回布尔值
+  + `defineProperty()` ：定义对象属性，返回布尔值
+  + `ownKeys()` ：遍历对象属性，返回数组( `Object.getOwnPropertyNames()+Object.getOwnPropertySymbols()` )
+  + `getOwnPropertyDescriptor()` ：返回对象属性描述，返回对象
+  + `getPrototypeOf()` ：返回对象原型，返回对象
+  + `setPrototypeOf()` ：设置对象原型，返回布尔值
+  + `isExtensible()` ：返回对象是否可扩展，返回布尔值
+  + `preventExtensions()` ：设置对象不可扩展，返回布尔值
+  + `apply()` ：绑定this后执行指定函数
+  + `construct()` ：调用构造函数创建实例
+
+* 设计目的
+  + 将Object属于语言内部的方法放到 `Reflect` 上
+  + 将某些Object方法报错情况改成返回false
+  + 让Object操作变成函数行为
+  + `Proxy` 与 `Reflect` 相辅相成
+* 废弃方法
+  + `Object.defineProperty() => Reflect.defineProperty()` 
+  + `Object.getOwnPropertyDescriptor() => Reflect.getOwnPropertyDescriptor()` 
+* 重点难点
+  + `Proxy` 方法和 `Reflect` 方法一一对应
+  + `Proxy` 和 `Reflect` 联合使用，前者负责拦截赋值操作，后者负责完成赋值操作
+
+**数据绑定：观察者模式**
+
+``` js
+const observerQueue = new Set();
+const observe = fn => observerQueue.add(fn);
+const observable = obj => new Proxy(obj, {
+    set(tgt, key, val, receiver) {
+        const result = Reflect.set(tgt, key, val, receiver);
+        observerQueue.forEach(v => v());
+        return result;
+    }
+});
+
+const person = observable({
+    age: 25,
+    name: "Yajun"
+});
+const print = () => console.log( `${person.name} is ${person.age} years old` );
+observe(print);
+person.name = "Joway";
+```
+
+## Iterator（接口）
+
+* 定义：为各种不同的数据结构提供统一的访问机制
+* 原理：创建一个指针指向首个成员，按照次序使用 `next()` 指向下一个成员，直接到结束位置(数据结构只要部署 `Iterator` 接口就可完成遍历操作)
+* 作用
+  + 为各种数据结构提供一个统一的简便的访问接口
+  + 使得数据结构成员能够按某种次序排列
+  + ES6创造了新的遍历命令 `for-of` ， `Iterator` 接口主要供 `for-of` 消费
+* 形式： `for-of` (自动去寻找Iterator接口)
+* 数据结构
+  + 集合： `Array` 、 `Object` 、 `Set` 、 `Map` 
+  + 原生具备接口的数据结构： `String` 、 `Array` 、 `Set` 、 `Map` 、 `TypedArray` 、 `Arguments` 、 `NodeList` 
+* 部署：默认部署在 `Symbol.iterator` (具备此属性被认为可遍历的iterable)
+* 遍历器对象
+  + `next()` ：下一步操作，返回{ done, value }(必须部署)
+  + `return()` ： `for-of` 提前退出调用，返回{ done: true }
+  + `throw()` ：不使用，配合 `Generator` 函数使用
+
+### ForOf循环
+
+* 定义：调用 `Iterator` 接口产生遍历器对象( `for-of` 内部调用数据结构的 `Symbol.iterator()` )
+* 遍历字符串： `for-in` 获取索引， `for-of` 获取值(可识别32位UTF-16字符)
+* 遍历数组： `for-in` 获取索引， `for-of` 获取值
+* 遍历对象： `for-in` 获取键， `for-of` 需自行部署
+* 遍历Set： `for-of` 获取值 => `for (const v of set)` 
+* 遍历Map： `for-of` 获取键值对 => `for (const [k, v] of map)` 
+* 遍历类数组：包含 `length` 的对象、 `Arguments` 对象、 `NodeList` 对象(无 `Iterator` 接口的类数组可用 `Array.from()` 转换)
+* 计算生成数据结构： `Array` 、 `Set` 、 `Map` 
+  + `keys()` ：返回遍历器对象，遍历所有的键
+  + `values()` ：返回遍历器对象，遍历所有的值
+  + `entries()` ：返回遍历器对象，遍历所有的键值对
+* 与 `for-in` 区别
+  + 有着同 `for-in` 一样的简洁语法，但没有 `for-in` 那些缺点、
+  + 不同于 `forEach()` ，它可与 `break` 、 `continue` 和 `return` 配合使用
+  + 提供遍历所有数据结构的统一操作接口
+* 应用场景
+  + 改写具有 `Iterator` 接口的数据结构的 `Symbol.iterator` 
+  + 解构赋值：对Set进行结构
+  + 扩展运算符：将部署 `Iterator` 接口的数据结构转为数组
+  + `yield*` ： `yield*` 后跟一个可遍历的数据结构，会调用其遍历器接口
+  + 接受数组作为参数的函数： `for-of、Array.from()` 、 `new Set()` 、 `new WeakSet()` 、 `new Map()` 、 `new WeakMap()` 、 `Promise.all()` 、 `Promise.race()` 
 
 ## Class（类） 
 
 ## Module（模块）
 
-## Iterator（接口）
-
 ## 异步编程
+
+### Generator
+
+### async await
+
+### Promise
 

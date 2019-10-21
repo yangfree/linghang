@@ -5,7 +5,7 @@ prev: false
 next: ./javascript
 ---
 
-# :green_apple: :green_apple: :green_apple: :green_apple: :green_apple: :green_apple: Css真的是难 :green_apple: :green_apple: :green_apple: :green_apple: :green_apple:
+# :green_apple: :green_apple: :green_apple: Css真的是难 :green_apple: :green_apple: :green_apple:
 
 此篇文章写的是关于css的一些总结, 作为一个前端工作者， `css` 是我第一个接触最早的，但也是学的最差的，我静下来看css可能只有几个小时，我甚至都没有弄懂就已经把网页拼凑起来了，之后在工作中，遇到不懂的就去google，反正也能应付过去。
 
@@ -53,7 +53,15 @@ next: ./javascript
 
 ### 元素浮动 `float` 
 
-浮动属性原是为了解决文字环绕图片问题，但后来常用于布局中，浮动元素的特点是会脱离文档，然后会把块级元素
+浮动属性原是为了解决文字环绕图片问题，但后来常用于布局中。 `absolute` , `fixed` 值会让元素脱离当前文档流, 并且会把非块级元素转化为块级元素。浮动大大方便了我们的布局，但是缺陷也是明显的，对于复杂页面，浮动布局会显得凌乱，对于维护来讲，成本较高。
+
+|值|含义|
+|:--|:--|
+|static|默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。|
+|inherit|	规定应该从父元素继承 `position` 属性的值。|
+|relative|生成相对定位的元素，相对于其正常位置进行定位。不会脱离文档流，一般用于转化为定位元素，很少用来布局。|
+|absolute|生成绝对定位的元素，相对于 `static` 定位以外的第一个父元素进行定位。|
+|fixed|生成绝对定位的元素，相对于浏览器窗口进行定位。|
 
 ### flex布局
 
