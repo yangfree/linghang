@@ -78,7 +78,7 @@ module.exports = {
 				]
 			},
 			// { text: 'Node', link: '/node/' },
-			// { text: 'About', link: '/about/' },
+			{ text: 'Vim', link: '/vim/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},
 		],
