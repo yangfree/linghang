@@ -70,11 +70,15 @@ module.exports = {
 					{
 						text: 'webpack原理',
 						link: '/webpack/webpack-3'
+					},
+					{
+						text: 'webpack深入',
+						link: '/webpack/webpack-4'
 					}
 				]
 			},
 			// { text: 'Node', link: '/node/' },
-			{ text: 'About', link: '/about/' },
+			// { text: 'About', link: '/about/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},
 		],
@@ -93,9 +97,10 @@ module.exports = {
 		displayAllHeaders: false, // 默认值：false 侧边栏只会显示由当前活动页面的标题组成的链接
 		activeHeaderLinks: true, // 默认值：true 滚动时通过 hash 高亮侧边栏标题
 
-		// Git 仓库和编辑链接
-		repo: 'https://github.com/yangfree/vuepress/', // 你的仓库
-		repoLabel: 'GitHub', // 导航栏上的文本
+		// Git 仓库和编辑链接 你的仓库
+		repo: 'https://www.webblog.vip/', 
+		// 导航栏上的文本
+		repoLabel: 'Ambitious Uncle', 
 
 		// editLinks: true,
 		// 默认为 "Edit this page"

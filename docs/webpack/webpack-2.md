@@ -344,7 +344,7 @@ entry:{
 ```
 我们让a,b两个模块同时引用`jquery`,别忘了去掉之前的`externals`配置
 
-![](http://img.fullstackjavascript.cn/analyze-1.png)
+![](/images/webpack2-1.png)
 
 
 配置`SplitChunks`插件
@@ -377,14 +377,14 @@ splitChunks: {
 
 > 我们将`async`改为`initial`
 
-![](http://img.fullstackjavascript.cn/analyze-2.png)
+![](/images/webpack2-2.png)
 
 我们在为每个文件动态导入`lodash`库,并且改成`async`
 ```javascript
 import('lodash')
 ```
 
-![](http://img.fullstackjavascript.cn/analyze-3.png)
+![](/images/webpack2-3.png)
 
 > 为每个入口引入`c.js`,并且改造配置文件
 
@@ -405,7 +405,7 @@ splitChunks: {
   }
 }
 ```
-![](http://img.fullstackjavascript.cn/analyze-4.png)
+![](/images/webpack2-4.png)
 
 > 这样再反过来看`chunks`的参数是不是就了然于胸啦！
 ## 9.热更新 
