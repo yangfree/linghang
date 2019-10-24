@@ -77,7 +77,22 @@ module.exports = {
 					}
 				]
 			},
-			// { text: 'Node', link: '/node/' },
+			{
+				text: 'Node', items: [
+					{
+						text: '基本概念',
+						link: '/node/concept'
+					},
+					{
+						text: 'Node基础',
+						link: '/node/node'
+					},
+					{
+						text: 'Express框架',
+						link: '/node/express'
+					},
+				]
+			},
 			{ text: 'Vim', link: '/vim/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},
@@ -98,9 +113,9 @@ module.exports = {
 		activeHeaderLinks: true, // 默认值：true 滚动时通过 hash 高亮侧边栏标题
 
 		// Git 仓库和编辑链接 你的仓库
-		repo: 'https://www.webblog.vip/', 
+		repo: 'https://www.webblog.vip/',
 		// 导航栏上的文本
-		repoLabel: 'Ambitious Uncle', 
+		repoLabel: 'Ambitious Uncle',
 
 		// editLinks: true,
 		// 默认为 "Edit this page"
