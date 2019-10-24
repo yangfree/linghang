@@ -4,7 +4,7 @@ heroImage: /images/home.jpg
 heroText: Document Website
 # tagline: 
 actionText: Start Web →
-actionLink: /web/
+actionLink: /web/read
 features:
 - title: 行动派
   details: 古人学问无遗力，少壮工夫老始成。纸上得来终觉浅，绝知此事要躬行。（Talk is cheap, show me the code.）
