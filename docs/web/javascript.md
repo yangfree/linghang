@@ -99,7 +99,7 @@ window.navigator.userAgent
  *  "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) 
  *  Gecko/20100101 Firefox/69.0"
  *
- * */ 
+ * */
 ```
 
 ### screen对象
@@ -574,15 +574,17 @@ console.log(arr, aaa);
 ```
 
 * `filter()` 方法用来筛选符合某些条件的数组元素项，返回一个数组，传递的函数是用来逻辑判断的，返回 `true` 或者 `false` 。不会改变原数组。
+* `indexOf()` 方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
 
 ``` javascript
-let ary = [1, 4, 5, 2, '6', [7]];
-let arr = ary.filter(item => {
-    return item > 3
-});
-console.log(ary, arr);
+// 利用filter和indexOf可以求数组的差异化
+let a = [1, 2, 87, 89];
+let b = [2, 4, 5, 7, 87, 89];
 
-// [ 1, 4, 5, 2, '6', [ 7 ] ] [ 4, 5, '6', [ 7 ] ]
+function diff(a, b) {
+    return a.length < b.length ? b.filter(i => a.indexOf(i) === -1) : null;
+}
+// [ 4, 5, 7 ]
 ```
 
 * `every()` 和 `some()` 是数组的逻辑判定，它们对数组元素应用指定的函数进行判定，返回 `true` 或者 `false` . `every()` 针对数组中的所有元素，只有当数组中的所有元素都符合逻辑判定，才会返回 `true` ， `some()` 是只要数组中有一个元素符合，就返回 `true` 。

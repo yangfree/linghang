@@ -5,8 +5,6 @@ prev: false
 next: ./javascript
 ---
 
-# :green_apple: :green_apple: :green_apple: Css真的是难 :green_apple: :green_apple: :green_apple:
-
 此篇文章写的是关于css的一些总结, 作为一个前端工作者， `css` 是我第一个接触最早的，但也是学的最差的，我静下来看css可能只有几个小时，我甚至都没有弄懂就已经把网页拼凑起来了，之后在工作中，遇到不懂的就去google，反正也能应付过去。
 
 我没有消耗过多的精力去学是因为我觉得它简单，但后来的举步维艰让我渐渐意识到，其实它并不简单，甚至还有困难，因为它没有逻辑可言，很多概念需要自己去想想，理解。
