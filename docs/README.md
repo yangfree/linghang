@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /images/home.jpg
-heroText: Document Website
+heroText: 前端开发攻城狮
 # tagline: 
 actionText: Start Web →
 actionLink: /web/read
@@ -29,7 +29,7 @@ footer: WEB Document | 前端静态文档资源站
   }
 
   .home .hero h1#main-title {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
   }
 
   .home .hero p.description {

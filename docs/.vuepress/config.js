@@ -1,6 +1,6 @@
 module.exports = {
-	title: 'WEB Document',
-	description: '一个关于web前端的静态文档资源站',
+	title: '杨洁个人博客',
+	description: '入坑容易脱坑难，呜呼哀哉, 叹叹叹!!!',
 	base: '/',
 	head: [
 		['link', { rel: 'icon', href: '/icon.ico' }]
@@ -14,7 +14,7 @@ module.exports = {
 		// 顶部导航
 		nav: [
 			{
-				text: 'Web', items: [
+				text: '前端基础', items: [
 					{
 						text: 'MadeHero',
 						items: [
@@ -38,6 +38,10 @@ module.exports = {
 							{
 								text: 'ES6',
 								link: '/web/es6'
+							},
+							{
+								text: 'TypeScript',
+								link: '/web/typescript'
 							},
 						]
 					},
@@ -77,23 +81,42 @@ module.exports = {
 					}
 				]
 			},
+			// {
+			// 	text: 'Node', items: [
+			// 		{
+			// 			text: '基本概念',
+			// 			link: '/node/concept'
+			// 		},
+			// 		{
+			// 			text: 'Node基础',
+			// 			link: '/node/node'
+			// 		},
+			// 		{
+			// 			text: 'Express框架',
+			// 			link: '/node/express'
+			// 		},
+			// 	]
+			// },
 			{
-				text: 'Node', items: [
+				text: '文章列表', items: [
 					{
-						text: '基本概念',
-						link: '/node/concept'
+						text: '前端系列文章',
+						link: '/notes/javascript'
 					},
 					{
-						text: 'Node基础',
-						link: '/node/node'
+						text: 'Js设计模式',
+						link: '/notes/design'
 					},
 					{
-						text: 'Express框架',
-						link: '/node/express'
+						text: 'git',
+						link: '/notes/git'
+					},
+					{
+						text: 'utils',
+						link: '/notes/utils'
 					},
 				]
 			},
-			{ text: 'Vim', link: '/vim/' },
 			// {text: 'Python', link: '/python/'},
 			// {text: 'RegExp', link: '/regexp/'},
 		],
@@ -113,9 +136,9 @@ module.exports = {
 		activeHeaderLinks: true, // 默认值：true 滚动时通过 hash 高亮侧边栏标题
 
 		// Git 仓库和编辑链接 你的仓库
-		repo: 'https://www.webblog.vip/',
+		repo: 'https://resume.webblog.vip/',
 		// 导航栏上的文本
-		repoLabel: 'Ambitious Uncle',
+		repoLabel: '我的简历',
 
 		// editLinks: true,
 		// 默认为 "Edit this page"

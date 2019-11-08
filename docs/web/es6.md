@@ -2,70 +2,42 @@
 title: ES6
 sidebar: auto
 prev: ./javascript
-next: ./vue
+next: ./typescript
 ---
 
-为了保持兼容性，在 `ES6` 中用 `var` 声明的对象仍是 `window` 的属性，但是通过 `let` , `const` , `class` 声明的变量，不是顶层对象 `window` 的属性。
+`ES6` 在2015年发布，所以又有人称它为 `ES2015` ，它是一个泛指，代表了 `JavaScript` 的下一代版本，基于目前为止，所有的标准浏览器都已支持大部分 `ES6` 语法，部分仍然需要使用 `babel` 转义。
 
-## 声明方式（let/const）
+一种新的语法从提案到正式标准，需要经历5个阶段, 一般到了草案阶段基本就定了，所以我们日常在配置 `babel` 的时候，写的是 `Stage2` :
 
-### 相同的
+> 1. Stage0  展示阶段
+> 2. Stage1  征求意见阶段
+> 3. Stage2  草案阶段
+> 4. Stage3  候选阶段
+> 4. Stage4  定案阶段->成为标准
+
+## let/const
+
+在 `ES6` 中，有六种声明变量的方式: `var` , `function` , `let` , `const` , `import` , `class` 。
+
+原来只有全局作用域和函数作用域，而在 `ES6` 中，加入了块级作用域来约束变量的生效范围，使其变的更加合理和容易理解。大括号 `{ }` 代表一个块，块中的变量是私有的，只有内部可以使用，块级元素可以无限嵌套，内部块级可以访问外部块级的变量。
+
+新增 `let` 和 `const` 替代 `var` 用来声明变量，它们解决了之前存在的一些弊端，比如 `var` 可以重复声明，在全局声明的变量会挂在 `window` 上，没有声明可以提前使用等等。 `let` 和 `const` 具有以下特点:
 
 * 都没有变量提升。
 * 只在块级作用域中生效。
 * 不声明不能提前使用。
 * 不容许重复声明。
 
-### 特有的
+### 区别:
 
 * `let` 声明变量， `const` 声明常量。
 * `let` 可以先声明然后再赋值， `const` 声明后就需要赋值。
 
-### `ES6` 有六种声明变量的方式
-
-:white_check_mark: `var` , `function` , `let` , `const` , `import` , `class` 。
-
 ## 解构赋值
 
-> - 结构赋值本质上属于模式匹配，只要等号两边的模式相同，左边的变量就会被赋予右边对应的值。
-> - 解构赋值规则：只要等号右边的值不是对象或数组，就先将其转为对象。
-> - 如果解构失败，变量的值会是 `undefined` 。
-> - 解构默认值生效条件：属性值严格等于 `undefined` 。
-> - 解构赋值容许设置默认值。
-> - `undefined` 和 `null` 无法转为对象，因此无法进行解构。
+解构赋值为编程带来了极大的便利，理论上来讲，任何模式相同的数据( `null` 和 `undefined` 不能被结构)都可以被解构，左边的变量会被赋予右边对应的值。解构失败会返回 `undefined` 。
 
-### 数组的解构赋值
-
-* 规则: 数据结构具有Iterator接口可采用数组形式的解构赋值。
-  + 示例1： `let [a, b, c] = [1, 2, 3];` 
-  + 示例2： `let [a, [b], d] = [1, [2, 3], 4];` 
-  + 示例3： `let [x = 1] = [undefined];` 
-
-### 对象的解构复制
-
-* 规则： 解构变量的名称必需与对象的属性名相同才可以取到正确的值。对象的解构真正被赋值的是 `value` 而不是 `key` 。对象的解构赋值可以取到继承的属性。
-  + 示例1： `let { bar, foo } = { foo: 'aaa', bar: 'bbb' };` 
-  + 示例2： `let {x = 3} = {x: undefined};// x=3` 
-  + 示例3: `let { x, y: z } = { x: 1, y: 2 }` 
-
-### 字符串的解构赋值
-
-* 规则： 字符串被转换成了一个类似数组的对象。
-  + 示例1： `let [a, b, c, d, e] = 'hello';` 
-
-### 数组和布尔值的解构赋值
-
-* 规则： 解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。
-  + 示例1： `let {toString: s} = 123;` 
-  + 示例2： `let {toString: s} = true;` 
-
-### 函数参数的解构赋值
-
-* 规则： `undefined` 就会触发函数参数的默认值
-  + 数组解构： `function Func([x = 0, y = 1]) {}` 
-  + 对象解构： `function Func({ x = 0, y = 1 } = {}) {}` 
-
-### 作用
+### 适用范围
 
 * 交换变量的值: `[x, y] = [y, x];` 
 * 返回函数多个值： `const [x, y, z] = Func()` 
@@ -79,50 +51,38 @@ next: ./vue
 
 ### 字符串
 
-* Unicode表示法：大括号包含表示Unicode字符(\u{0xXX}或\u{0XXX})
+`ES6` 新增字符串模板，自此我们可以优雅的解决字符串拼接问题，新增的常用方法如下:
+
 * 字符串遍历：可通过for-of遍历字符串
-* 字符串模板：可单行可多行可插入变量的增强版字符串
-* 标签模板：函数参数的特殊调用
-* String.raw()：返回把字符串所有变量替换且对斜杠进行转义的结果
-* String.fromCodePoint()：返回码点对应字符
-* codePointAt()：返回字符对应码点(String.fromCodePoint()的逆操作)
-* normalize()：把字符的不同表示方法统一为同样形式，返回新字符串(Unicode正规化)
-* repeat()：把字符串重复n次，返回新字符串
-* matchAll()：返回正则表达式在字符串的所有匹配
-* includes()：是否存在指定字符串
-* startsWith()：是否存在字符串头部指定字符串
-* endsWith()：是否存在字符串尾部指定字符串
+
+``` js
+let str = 'hello';
+for (let val of str) {
+    // ...
+}
+```
+
+* `normalize()` ：把字符的不同表示方法统一为同样形式，返回新字符串(Unicode正规化)
+* `repeat()` ：把字符串重复n次，返回新字符串
+* `includes()` ：是否存在指定字符串, 存在返回 `true` 
+* `startsWith()` ：是否存在字符串头部指定字符串 `true` 
+* `endsWith()` ：是否存在字符串尾部指定字符串 `true` 
 
 ### 数值
 
-* 二进制表示法：0b或0B开头表示二进制(0bXX或0BXX)
-* 八进制表示法：0o或0O开头表示二进制(0oXX或0OXX)
-* Number. EPSILON：数值最小精度
-* Number. MIN_SAFE_INTEGER：最小安全数值(-2^53)
-* Number. MAX_SAFE_INTEGER：最大安全数值(2^53)
-* Number.parseInt()：返回转换值的整数部分
-* Number.parseFloat()：返回转换值的浮点数部分
-* Number.isFinite()：是否为有限数值
-* Number.isNaN()：是否为NaN
-* Number.isInteger()：是否为整数
-* Number.isSafeInteger()：是否在数值安全范围内
-* Math.trunc()：返回数值整数部分
-* Math.sign()：返回数值类型(正数1、负数-1、零0)
-* Math.cbrt()：返回数值立方根
-* Math.clz32()：返回数值的32位无符号整数形式
-* Math.imul()：返回两个数值相乘
-* Math.fround()：返回数值的32位单精度浮点数形式
-* Math.hypot()：返回所有数值平方和的平方根
-* Math.expm1()：返回e^n - 1
-* Math.log1p()：返回1 + n的自然对数(Math.log(1 + n))
-* Math.log10()：返回以10为底的n的对数
-* Math.log2()：返回以2为底的n的对数
-* Math.sinh()：返回n的双曲正弦
-* Math.cosh()：返回n的双曲余弦
-* Math.tanh()：返回n的双曲正切
-* Math.asinh()：返回n的反双曲正弦
-* Math.acosh()：返回n的反双曲余弦
-* Math.atanh()：返回n的反双曲正切
+* `Number.parseInt()` ：返回转换值的整数部分
+* `Number.parseFloat()` ：返回转换值的浮点数部分
+* `Number.isFinite()` ：是否为有限数值
+* `Number.isNaN()` ：是否为NaN
+* `Number.isInteger()` ：是否为整数
+* `Number.isSafeInteger()` ：是否在数值安全范围内
+* `Math.trunc()` ：返回数值整数部分
+* `Math.sign()` ：返回数值类型(正数1、负数-1、零0)
+* `Math.hypot()` ：返回所有数值平方和的平方根
+* `Math.cbrt()` ：返回数值立方根
+* `Math.imul()` ：返回两个数值相乘
+* `Math.log10()` ：返回以10为底的n的对数
+* `Math.log2()` ：返回以2为底的n的对数
 
 ### 正则
 
@@ -197,7 +157,6 @@ function foo(y = undefined) {}
 ### 对象
 
 * 简洁的表达: 当属性名和属性值名字相同的时候，可以直接写一个就可以。 `{foo:foo}={foo}` 
-* 属性名表达式：字面量定义对象时使用[]定义键([prop]。
 * 方法的name属性：返回方法函数名
 * 属性的遍历:
   + `for...in` 循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。
@@ -205,7 +164,7 @@ function foo(y = undefined) {}
   + `Object.getOwnPropertyNames(obj)` 返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。
   + `Object.getOwnPropertySymbols(obj)` 返回一个数组，包含对象自身的所有 Symbol 属性的键名。
   + `Reflect.ownKeys(obj)` 返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。
-* super关键字: 指向当前对象的原型.
+* `super` 关键字: 指向当前对象的原型.
 * `Object.is()` ：对比两值是否相等, 基本与 `===` 行为一致。
 * `Object.assign` : 方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）, 返回原对象，原对象被更改。(浅拷贝)
 * Object.getPrototypeOf()`：返回对象的原型对象
