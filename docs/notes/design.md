@@ -5,13 +5,9 @@ sidebar: auto
 
 ![javascript中类的原型图](/images/class_prototype.png "javascript中类的原型图")
 
-## 理解面向对象
+## 1. Js设计模式-面向对象的javascript
 
----
-
-## Js设计模式-面向对象的javascript
-
-### 一切皆对象
+### 1.1一切皆对象
 
 在 `JavaScript` 中，**对象**是由属性和其对应的方法组成，而具有相同或相似性质的对象的抽象就是**类**。每个类都有一个 `prototype` 属性，它是一个对象，其 `constructor` 属性指向自己本身。而通过 `new` 关键字创造的**实例**都是一个对象，它有一个 `__proto__` 的虚拟属性，并且指向类的原型。因 `Object` 是所有类的基类，所以，所有类都指向其原型。以下代码可以辅助理解：
 
@@ -32,7 +28,7 @@ console.log(a.__proto__ === Animal.prototype); // true
 console.log(Animal.prototype.__proto__ === Object.prototype); //true
 ```
 
-### 多态
+### 1.2多态
 
 对于多态的理解来自于《JavaScript 设计模式与开发实践》一书中的解释：
 
@@ -68,7 +64,7 @@ WcStudents.prototype.doSomething = function() {
 bellRang(new WcStudents()); // 我要上厕所
 ```
 
-### 继承
+### 1.3继承
 
 创建一个或多个类的专门版本类方式称为继承（ `Javascript` 只支持单继承）。 创建的专门版本的类通常叫做子类，另外的类通常叫做父类。 在 `Javascript` 中，继承通过赋予子类一个父类的实例并专门化子类来实现。在现代浏览器中你可以使用 `Object.create` 实现继承.
 
@@ -141,19 +137,11 @@ Student.prototype = createObject(Person.prototype);
 
 继承部分引用地址:[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
 
-### 封装
+### 1.4封装
 
 我对于封装的理解就是**隐藏**，除了暴露出必须要暴露的东西，其他一切最好都隐藏。
 
-### call apply bind this
-
----
-
-### this
-
-`JavaScript` 中的 `this` 总是指向一个对象，而具体指向的对象是对象在运行的时候基于函数的执行环境动态绑定的，而非函数声明时的环境。
-
-#### this 指向
+### 1.5this指向
 
 在 `JavaScript` 中， `this` 的指向一般分为：
 
@@ -163,7 +151,7 @@ Student.prototype = createObject(Person.prototype);
 * 定时器 (window)
 * `Function.prototype.call` , `Function.prototype.apply` 或 `Function.prototype.bind` 调用。(根据需求动态的 this 指向)
 
-### call, apply, bind
+### 1.6call, apply, bind
 
 `call` , `apply` 和 `bind` 都可以用来改变 this 指向，区别是 `call` 和 `apply` 会让函数立即执行， `bind` 仅仅改变了 `this` 的指向，函数并不会执行。
 
@@ -171,9 +159,9 @@ Student.prototype = createObject(Person.prototype);
 
 对于 `JavaScript` 开发者来说，闭包(closure)是一个很抽象但是又必须要理解的概念，而函数作为 `JavaScript` 中的一等公民也是我们必须要研究的对象，这篇文章写的并不流畅，期间多次查阅资料加上自己的理解才得以完成，所以，文章中简述的不一定正确，一千人眼里有一千个哈姆雷特，同样，一千人里也有一千种理解，对于闭包，对于高阶函数，我们始终在修行。
 
-## Js设计模式-闭包和高阶函数
+## 2. Js设计模式-闭包和高阶函数
 
-### 闭包
+### 2.1闭包
 
 我理解的闭包主要有两个作用，一是保护里面的变量不受外界的干扰；二是可以用来存值变相延长变量的生命周期。所以，要理解闭包，首先要理解 `JS` 中的变量作用域和生命周期。
 
@@ -219,7 +207,7 @@ f(); //3
 
 以上的第二种情况下，变量 a 的生命周期因为某些原因似乎被延续了，当我们反复执行 `f` 的时候，数字会一直累加。而我们返回的匿名函数访问到了在 `func` 中定义的 a 的指，并且执行的结果被外面的 `f` 接收，这就有了不被销毁的理由，而匿名函数此时就会形成一个闭包结构。
 
-### 闭包的定义
+### 2.2闭包的定义
 
 **闭包:**闭包的形成和变量的作用域和生命周期有很大的关系，它可以看成是函数之间由内到外单向通信的桥梁(桥梁比喻引自阮一峰老师的比喻)。闭包有两个作用：
 
@@ -233,14 +221,14 @@ f(); //3
 * 延长变量的生命周期
 * ...
 
-### 高阶函数
+### 2.3高阶函数
 
 函数作为 `JavaScript` 的一等公民，我们很难用一篇文章来描述清楚，下面只是一些简单的介绍，其实满足以下条件之一的函数都可以称之为**高阶函数:**
 
 * 函数作为参数传递 (callback)
 * 函数作为返回值输出 (return Function)
 
-### AOP
+### 2.4AOP
 
 > 面向切面编程的一种体现（其实不太懂）
 
@@ -275,7 +263,7 @@ func();
 // =====after=====
 ```
 
-### currying 函数柯里化
+### 2.5currying 函数柯里化
 
 柯里化又称部分求值。一个柯里化的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚才传入的参数在函数形成的**闭包**中被保存起来。待到函数被真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。
 假设我们要计算一个月的流水账：
@@ -330,7 +318,7 @@ console.log(costResult()); // 320
 
 当我们在进行重复操作，比如以上例子，处理某些浏览器兼容，数据的类型判断等只需要执行一遍的时候就应该考虑函数柯里化，它会给代码的性能带来极大的提升。
 
-### 函数节流
+### 2.6函数节流
 
 在许多场景中，我们可能不太需要过于频繁的调用函数，常见的情况一般是在监控事件，拖拽事件还有监听事件。
 

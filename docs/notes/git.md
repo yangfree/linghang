@@ -3,32 +3,30 @@ title: Git笔记
 sidebar: auto
 ---
 
-## Git笔记
-
 这篇笔记仅供自己查看使用，不具备教程作用。更多关于Git的资料教程请参考官方文档[https://git-scm.com/book/zh/v2/](https://git-scm.com/book/zh/v2/)
 
-### 起步-关于版本控制
+## 起步-关于版本控制
 
 > 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。
 
-#### 集中式版本控制系统
+### 集中式版本控制系统
 
 > 一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。
 
 ![集中式版本控制系统](/images/git_1.png "集中式版本控制系统")
 
-#### 分布式版本控制系统
+### 分布式版本控制系统
 
 > 分布式管理系统客户端提取的不仅仅是最新的文件，而是把整个仓库克隆到客户端
 
 ![分布式版本控制系统](/images/git_2.png "分布式版本控制系统")
 
-#### 优势
+### 优势
 
 * 不怕服务器宕机或者数据库所在的磁盘损坏。
 * 强大的分支系统
 
-### Git基础
+## Git基础
 
 > `Git` 有三种状态，"已提交", "已修改"和"已暂存", 三种状态对应着三个工作区域概念，分别是**Git仓库**，**工作目录**以及**暂存区域**。
 
@@ -40,7 +38,7 @@ sidebar: auto
 
 ![Git工作流程图](/images/git_3.png "Git工作流程图")
 
-#### 初始化Git并配置用户信息
+### 初始化Git并配置用户信息
 
 ``` bash
 $ git config --global user.name "username"
@@ -50,7 +48,7 @@ $ git config --global user.password "password"
 
 你可以使用 `git config --list` 来查看你的配置信息。
 
-#### 帮助信息
+### 帮助信息
 
 当你需要使用帮助时，你可以使用 `git hlep` 命令来寻求帮助文档
 
@@ -62,7 +60,7 @@ $ git <verb> --help
 $ git config --help
 ```
 
-#### 忽略文件
+### 忽略文件
 
 `.gitignore` 文件帮助我们管理需要忽略的文件，规范如下：
 
@@ -72,7 +70,7 @@ $ git config --help
 * 匹配模式可以以（/）结尾指定目录。
 * 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
 
-#### 获取Git仓库
+### 获取Git仓库
 
 * 在现有目录中初始化仓库
 
@@ -102,7 +100,7 @@ $ git remote rm origin "url"
 $ git remote update origin "url"
 ```
 
-#### 基础命令
+### 基础命令
 
 具体命令参数，可以使用 `--help` 查看。
 
@@ -125,14 +123,14 @@ $ git pull origin master
 $ git push origin master
 ```
 
-#### 查看提交历史
+### 查看提交历史
 
 ``` bash
 $ git log
 $ git reflog
 ```
 
-#### 撤销操作
+### 撤销操作
 
 ``` bash
 $ git commit -m 'initial commit'
@@ -147,7 +145,7 @@ $ gitrm --cached <fileName>
 $ git checkout <fileName>
 ```
 
-#### 三个区的对比
+### 三个区的对比
 
 ``` bash
 # 工作区VS暂存区
@@ -160,7 +158,7 @@ $ git diff --cached
 $ git diff --stat
 ```
 
-#### git回退操作
+### git回退操作
 
 ``` bash
 # 把暂存区内容回滚到工作区（一旦回滚，工作区内容无法恢复）
@@ -195,7 +193,7 @@ $ git merge xxx
 $ git log --oneline --decorate --graph --all
 ```
 
-#### 分支管理
+### 分支管理
 
 ``` bash
 # 查看分支列表
@@ -208,12 +206,12 @@ $ git branch --merged
 $ git branch --no-merged
 ```
 
-#### 冲突处理
+### 冲突处理
 
   1. 同一个文件不同行发生冲突， `Git` 会自动合并，我们可以根据自己的需要选择保留哪一个，也可以全部都保留，把多余的字符删除掉，重新提交即可。
   2. 同一个文件同一行代码发生冲突, `i` -> `ESC` -> `:wq` 即可。
 
-#### 分支开发流工作
+## 分支开发流工作
 
 * 长期分支
 

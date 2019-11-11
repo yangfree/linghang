@@ -3,7 +3,7 @@ title: JavaScript系列文章
 sidebar: auto
 ---
 
-## js中的严格模式(use strict)
+## 1.js中的严格模式(use strict)
 
 `user strict` 严格模式，摘自[JavaScript权威指南（第六版）]。
 
@@ -34,11 +34,11 @@ return this === undefined
 * 在严格模式中，标识符 `eval` 和 `arguments` 当做关键字，它们的值是不能更改的。不能给这些标识符赋值，也不能把它们声明为变量、用做函数名、用做函数参数或用做 `catch` 块的标识符。
 * 在严格模式中限制了对调用桔的检测能力，在严格模式的函数中， `arguments.caller` 和 `arguments.callee` 都会抛出一个类型错误异常。严格模式的函数同样具有 `caller` 和 `arguments` 属性， 当访问这两个属性时将抛出类型错误异常（有一些JavaScript的实现在非严格模式里定义了这些非标准的属性）。
 
-## JavaScript数组去重
+## 2. JavaScript数组去重
 
 数组去重主要有三个解决思路，第一个是双循环比对，把结果相等的两项删除，第二个则是借助语言本身的一些方法来实现，最后一个则是借助一些特性，比如ES6新出的 `set` 数据结构。
 
-### 双循环
+### 2.1双循环
 
 ``` js
 // 最容易想到
@@ -68,7 +68,7 @@ function unique(ary) {
 }
 ```
 
-### 借助语言本身的方法
+### 2.2借助语言本身的方法
 
 ``` js
 // indexOf
@@ -88,15 +88,15 @@ function unique(arr) {
 }
 ```
 
-### 数据结构
+### 2.3数据结构
 
 ``` js
 [...new Set(arr)]
 ```
 
-## JavaScript中算法一览
+## 3. JavaScript中算法一览
 
-### 排序算法说明:
+### 3.1排序算法说明:
 
 1. 对于评述算法优劣术语的说明
 
@@ -113,7 +113,7 @@ function unique(arr) {
 
 ![排序算法图片总结](/images/sort.png)
 
-### 冒泡排序:
+### 3.2冒泡排序:
 
 解析：1. 比较相邻的两个元素，如果前一个比后一个大，则交换位置。
 
@@ -134,7 +134,7 @@ function sort(ary) {
 }
 ```
 
-### 快速排序:
+### 3.3快速排序:
 
 解析：快速排序是对冒泡排序的一种改进，第一趟排序时将数据分成两部分，一部分比另一部分的所有数据都要小。然后递归调用，在两边都实行快速排序。
 
@@ -157,7 +157,7 @@ function quickSort(ary) {
 }
 ```
 
-### 插入排序:
+### 3.4插入排序:
 
 解析：
 
@@ -191,7 +191,7 @@ function insertSort(ary) {
 }
 ```
 
-### 二分查找:
+### 3.5二分查找:
 
 解析：二分查找，也为折半查找。首先要找到一个中间值，通过与中间值比较，大的放右，小的放在左边。再在两边中寻找中间值，持续以上操作，直到找到所在位置为止。
 
@@ -215,7 +215,7 @@ function binarySearch(data, dest, startIndex, endIndex) {
 
 　　
 
-### 选择排序:
+### 3.6选择排序:
 
 　　解析: 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
 
@@ -238,13 +238,13 @@ function selectionSort(ary) {
 }
 ```
 
-## 跨域的几种方式
+## 4. 跨域的几种方式
 
-### 什么是跨域
+### 4.1什么是跨域
 
 广义上的跨域是指一个域下的页面或者脚本去请求另一个域下的资源，但在我们实际的工作中涉及到的跨域都是受到了浏览器同源策略限制的一些请求。那么什么是浏览器的同源策略呢？
 
-#### 同源策略
+#### 4.1.1同源策略
 
 《协议+域名+端口号》三者都相同的是为同源，只要其中有不同的，就会受到同源策略的限制，以下是一些例子。
 
@@ -262,13 +262,13 @@ http: //baidu.com:8080
     http: //www.baidu.com:8080
 ```
 
-#### 常涉及到的跨域
+#### 4.1.2常涉及到的跨域
 
 * cookie, localstorage...
 * DOM元素也有同源策略
 * ajax也不支持跨域
 
-### 实现跨域
+## 5. 实现跨域
 
 * jsonp实现
 * cors后端配置实现
@@ -280,7 +280,7 @@ http: //baidu.com:8080
 * nginx
 * websocket
 
-#### jsonp
+### 5.1jsonp
 
 利用 `<script>` 标签不受同源策略的影响实现跨域。
 
@@ -316,11 +316,11 @@ function jsonp({
 * 只能发送 `get` 请求
 * 有安全方面的问题 (xss攻击)
 
-#### cors（跨域资源共享）
+### 5.2cors（跨域资源共享）
 
 目前常用的跨域手段，在后台中配置 `Access-Control-Allow-Origin` , 前端无需做任何配置。支持 `get` , `post` , `put` ... 设置 `*` 号表示容许所有。缺点是不能携带 `cookie` ，个人认为配置比较繁琐，但是安全性高。
 
-#### postMessage + iframe
+### 5.3postMessage + iframe
 
 `postMessage` 是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，它可用于解决以下方面的问题：
 
@@ -375,7 +375,7 @@ window.addEventListener('message', function(e) {
 /script>
 ```
 
-#### window.name + iframe
+### 5.4window.name + iframe
 
 window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。
 
@@ -431,7 +431,7 @@ proxy('http://www.demo2.com/b.html', function(data) {
 
 总结：通过iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。
 
-#### local.hash + iframe
+### 5.5local.hash + iframe
 
 实现原理： a欲与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。
 
@@ -490,7 +490,7 @@ window.onhashchange = function() {
 /script>
 ```
 
-#### document.domain iframe
+### 5.6document.domain iframe
 
 > 此方案主要解决主域相同子域不同的跨域场景。实现的原理是两个页面都通过js强制设置 `document.domain` 为基础主域，就实现了同域。
 
@@ -515,7 +515,7 @@ alert('get js data from parent ---> ' + window.parent.user); <
 /script>
 ```
 
-#### node中间件设置跨域
+### 5.7node中间件设置跨域
 
 node中间件实现跨域代理，原理大致与nginx相同，都是通过启一个代理服务器，实现数据的转发，也可以通过设置cookieDomainRewrite参数修改响应头中cookie中域名，实现当前域的cookie写入，方便接口登录认证。
 
@@ -610,7 +610,7 @@ module.exports = {
 }
 ```
 
-#### nginx
+### 5.8nginx
 
 1. nginx配置解决iconfont跨域
 
@@ -685,7 +685,7 @@ server.listen('8080');
 console.log('Server is running at port 8080...');
 ```
 
-#### websocket
+### 5.9websocket
 
 > WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。原生WebSocket API使用起来不太方便，我们可以使用Socket.io，
 
@@ -747,11 +747,11 @@ socket.listen(server).on('connection', function(client) {
 
 > [原文: 前端解决跨域的九种方法](https://www.cnblogs.com/sdcs/p/8484905.html); 
 
-## 前端模块化-CommonJS，AMD和ES6模块规范
+## 6. 前端模块化-CommonJS，AMD和ES6模块规范
 
 `CommonJs` , `AMD` , `ES6` 模块规范。
 
-### 模块化
+### 6.1模块化
 
 前端最近几年发展迅速， `javascript` 由早期的 `简单平面` ，发展到现在的 `多维度` ，原来的代码组织规范越来越难以驾驭大规模的项目，模块化开发被提上了台面。
 
@@ -759,7 +759,7 @@ socket.listen(server).on('connection', function(client) {
 
 日常团队合作中，我们难以处理的是**命名冲突**和**项目依赖关系**，而模块化开发就是封装所有，根据规范抛出接口与外界联系，彼此之间相互不影响，只暴露我们希望暴露的方法和数据。
 
-### CommonJS规范
+### 6.2CommonJS规范
 
 `CommonJS` 对模块进行了规范，它主要分为模块定义，模块引用和模块标识。根据这个规范，每个文件就是一个模块，有自己的作用域。在一个文件里面定义的变量、函数、类，都是私有的，对其他文件不可见。
 
@@ -767,7 +767,7 @@ CommonJS规范规定，每个模块内部，module变量代表当前模块。这
 
 `NodeJS` 的模块系统就遵循了 `CommonJS` 规范，但Node在实现中并非完全按照CommonJS规范实现，而是对模块规范进行了一定的取舍。下面，我们结合Node来深入了解CommonJS规范。
 
-#### 模块定义
+#### 6.2.2模块定义
 
 ``` javascript
 function Module(id, parent) {
@@ -792,7 +792,7 @@ var module = new Module(filename, parent);
 * `module.children` : 返回一个数组，表示该模块要用到的其他模块。
 * `module.exports` : 初始值为一个空对象{}，表示模块对外输出的接口。
 
-#### 模块引用
+#### 6.2.3模块引用
 
 `require` 方法用于加载模块，它有一个参数，即**带有参数路径的模块的文件名或者为模块名**。
 
@@ -802,17 +802,17 @@ const nav = require('/home/nav'); // 绝对路径的模块名
 const http = require('http'); //模块名
 ```
 
-#### 模块标识
+#### 6.2.4模块标识
 
 模块标识就是 `require` 函数的参数名称，一般要符合驼峰命名法，默认是寻找以 `.js` 结尾的文件
 
 `CommonJS` 是同步的，意味着你想调用模块里的方法，必须先用 `require` 加载模块。这对服务器端的 `Nodejs` 来说不是问题，因为模块的JS文件都在本地硬盘上，CPU的读取时间非常快，同步不是问题。但如果是浏览器环境，要从服务器加载模块。模块的加载将取决于网速，如果采用同步，网络情绪不稳定时，页面可能卡住, 这就必须采用异步模式。所以，就有了 `AMD` 解决方案。
 
-### AMD规范
+### 6.3AMD规范
 
 `AMD` 规范是由 `CommonJS` 规范演变而来，大多数情况下和 `CommonJs` 规范一致，最大的区别是 `AMD` 加载模块是异步加载，所以，一般服务端用 `CommonJS` ，而浏览器端则遵循 `AMD` 。
 
-#### 定义模块
+#### 6.3.1定义模块
 
 ``` javascript
 define(id ? , dependencies ? , factory);
@@ -829,7 +829,7 @@ if (typeof define === "function" && define.amd) {
 * 第二个参数，dependencies（依赖），是个定义中模块所依赖模块的数组。依赖模块必须根据模块的工厂方法优先级执行，并且执行的结果应该按照依赖数组中的位置顺序以参数的形式传入（定义中模块的）工厂方法中。
 * 第三个参数，factory（工厂方法），为模块初始化要执行的函数或对象。如果为函数，它应该只被执行一次。如果是对象，此对象应该为模块的输出值。
 
-#### 引入模块
+#### 6.3.2引入模块
 
 * 第一个参数[module]，是一个数组，里面的成员就是要加载的模块；第二个参数callback，则是加载成功之后的回调函数。如果将前面的代码改写成AMD形式，就是下面这样：
 
@@ -842,7 +842,7 @@ require(['a'], function(a) {
 });
 ```
 
-### ES6模块规范
+### 6.4ES6模块规范
 
 `ES6` 引入了新的模块规范，新的规范定义用 `export` 提供对外的接口，用 `import` 引入模块。 `ES6` 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。 `CommonJS` 和 `AMD` 模块，都只能在运行时确定这些东西。
 
@@ -880,11 +880,11 @@ import {
 } from './profile.js';
 ```
 
-## axios中文文档
+## 7.axios中文文档
 
 > 基于 `Promise` 的 `HTTP` 客户端，用于浏览器和node.js。
 
-### 特征
+### 7.1特征
 
 * 从浏览器生成 `XMLHttpRequests` 。
 * 基于 `node.js` 发出 `http` 请求。
@@ -895,13 +895,13 @@ import {
 * 自动转换为 `JSON` 数据。
 * 客户端支持对 `XSRF` \[跨站请求伪造\]的保护。
 
-### 浏览器支持
+### 7.2浏览器支持
 
 > 支持大部分主流浏览器。
 
 ![axios浏览器支持情况](/images/axios_brower.png  "axios浏览器支持")
 
-### 安装
+### 7.3安装
 
 * `npm` 
 
@@ -921,7 +921,7 @@ $bower install axios
 < script src = "https://unpkg.com/axios/dist/axios.min.js" > < /script>
 ```
 
-## 例子
+### 7.4例子
 
 * `GET` 请求
 
@@ -1003,7 +1003,7 @@ axios.all([getUserAccount(), getUserPermissions()])
     }));
 ```
 
-## `axios` API
+### 7.5 `axios` API
 
 > 可以通过相关配置传递给 `axios` 发起请求。
 
@@ -1042,18 +1042,18 @@ axios({
 axios('/user/12345');
 ```
 
-### 请求方法的别名
+### 7.6请求方法的别名
 
 > 为了使用方便，为所有支持的请求方法提供了别名。
 
-* axios.request(config)
-* axios.get(url[, config])
-* axios.delete(url[, config])
-* axios.head(url[, config])
-* axios.options(url[, config])
-* axios.post(url[, data[, config]])
-* axios.put(url[, data[, config]])
-* axios.patch(url[, data[, config]])
+* `axios.request(config)` 
+* `axios.get(url[, config])` 
+* `axios.delete(url[, config])` 
+* `axios.head(url[, config])` 
+* `axios.options(url[, config])` 
+* `axios.post(url[, data[, config]])` 
+* `axios.put(url[, data[, config]])` 
+* `axios.patch(url[, data[, config]])` 
 
 #### node
 
@@ -1063,10 +1063,10 @@ axios('/user/12345');
 
 > 处理并发请求的帮助函数
 
-* axios.all(iterable)
-* axios.spread(callback)
+* `axios.all(iterable)` 
+* `axios.spread(callback)` 
 
-## 创建一个实例
+### 7.7创建一个实例
 
 > 您可以使用自定义配置创建axios的新实例。
 
@@ -1082,7 +1082,7 @@ const instance = axios.create({
 });
 ```
 
-### 实例方法
+### 7.8实例方法
 
 > 下面列出了可用的实例方法。指定的配置将与实例配置合并。
 
@@ -1096,7 +1096,7 @@ const instance = axios.create({
 * axios#patch(url[, data[, config]])
 * axios#getUri([config])
 
-## 请求配置
+### 7.9请求配置
 
 > 下面是用于发出请求的可用配置选项。只需要url。如果没有指定方法，请求将默认为GET。
 
@@ -1263,7 +1263,7 @@ const instance = axios.create({
 }
 ```
 
-## 响应详解
+### 7.10响应详解
 
 > 请求的响应包含以下信息
 
@@ -1307,11 +1307,11 @@ axios.get('/user/12345')
 
 当使用 `catch` 或者成功的回调函数作为 `then` 的第二个参数的时候，响应将通过 `error` 对象可用，如处理错误一节中所述。
 
-## 默认配置
+### 7.11默认配置
 
 > 你可以为每个请求配置默认值
 
-### 全局默认值
+### 7.12全局默认值
 
 ``` javascript
 axios.defaults.baseURL = 'https://api.example.com';
@@ -1319,7 +1319,7 @@ axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 ```
 
-### 实例默认值
+### 7.13实例默认值
 
 ``` javascript
 // Set config defaults when creating the instance
@@ -1331,7 +1331,7 @@ const instance = axios.create({
 instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 ```
 
-### 配置优先级
+### 7.14配置优先级
 
 > 配置将按照优先级顺序进行合并。默认查找顺序是lib/defaults.js文件夹。然后是实例的默认属性，最后是请求的配置参数。后者将优先于前者。下面是一个例子。
 
@@ -1350,7 +1350,7 @@ instance.get('/longRequest', {
 });
 ```
 
-## 拦截器
+### 7.15拦截器
 
 > 你可以在 `.then` 或 `.catch` 之前拦截请求或者响应.
 
@@ -1392,7 +1392,7 @@ instance.interceptors.request.use(function() {
 });
 ```
 
-## 错误处理
+### 7.16错误处理
 
 ``` javascript
 axios.get('/user/12345')
@@ -1426,7 +1426,7 @@ axios.get('/user/12345', {
 })
 ```
 
-## 取消请求
+### 7.17取消请求
 
 > 可以你通过 `cancel token` 来取消一个请求, `axios` 取消令牌API基于撤销的可取消承诺提议。您可以使用 `CancelToken.source` 工厂创建取消令牌，如下所示：
 
@@ -1473,11 +1473,11 @@ cancel();
 
 **注意:**您可以使用相同的取消令牌取消多个请求。
 
-## 使用application / x-www-form-urlencoded格式
+### 7.18使用application / x-www-form-urlencoded格式
 
 默认情况下，axios将JavaScript对象序列化为JSON。要以应用程序/x-www-form-urlencode格式发送数据，可以使用以下选项之一。
 
-### Brower
+#### Brower
 
 在浏览器中，您可以使用URLSearchParams API，如下所示:
 
@@ -1517,7 +1517,7 @@ const options = {
 axios(options);
 ```
 
-## node.js
+#### node.js
 
 在node.js中，您可以querystring按如下方式使用该模块：
 
@@ -1532,17 +1532,15 @@ axios.post('http://something.com/', querystring.stringify({
 
 **注:**如果您需要对嵌套的对象进行stringify，那么最好使用qs库，因为querystring方法已经知道该用例的问题[https://github.com/nodejs/node-v0.x-archive/issues/1665](https://github.com/nodejs/node-v0.x-archive/issues/1665)。
 
-## 其他
-
-### 版本说明
+### 7.19版本说明
 
 在axios到达1.0发布版之前，将使用新的次要版本发布重大更改。例如0.5.1，并且0.5.4将具有相同的API，但0.6.0将具有重大更改。
 
-### Promise
+### 7.20Promise
 
 `Axios` 依赖于ES6的 `Promise` 环境支持实现，所以，如果您的环境不支持ES6的 `Promise` ，您可以使用 `polyfill` 。
 
-### TypeScript
+### 7.21TypeScript
 
 `Axios` 在 `TypeScript` 定义使用。
 
@@ -1553,17 +1551,17 @@ axios.get('/user?ID=12345');
 
 > **注:**axios深受Angular中提供的$http服务的启发。从根本上说，axios是在努力为Angular之外的用户提供一个独立的类似于$http的服务。
 
-## License
+### 7.22License
 
 MIT
 
-## Cookie, LocalStorage 与 SessionStorage
+## 8. Cookie, LocalStorage 与 SessionStorage
 
-## Cookie
+### 8.1Cookie
 
 cookie是纯文本，没有可执行代码。存储数据，当用户访问了某个网站（网页）的时候，我们就可以通过cookie来向访问者电脑上存储数据，或者某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密）
 
-### 特点
+#### 特点
 
 * 不同的浏览器存放的cookie位置不一样，也是不能通用的。
 * cookie的存储是以域名形式进行区分的，不同的域下存储的cookie是独立的。
@@ -1572,11 +1570,11 @@ cookie是纯文本，没有可执行代码。存储数据，当用户访问了�
 * 每个cookie存放的内容大小也是有限制的，不同的浏览器存放大小不一样，一般为4KB。
 * cookie也可以设置过期的时间，默认是会话结束的时候，当时间到期自动销毁
 
-## LocalStorage
+### 8.2LocalStorage
 
 `LocalStorage` 是H5新推出的一种本地存储方案，在IE8及以上浏览器中都可以很好的使用。
 
-### 特点
+#### 特点
 
 * 生命周期：持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。
 * 存储的信息在同一域中是共享的。
@@ -1586,7 +1584,7 @@ cookie是纯文本，没有可执行代码。存储数据，当用户访问了�
 * `LocalStorage` 本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡。
 * `LocalStorage` 受同源策略的影响。
 
-### 设置/获取/删除
+#### 设置/获取/删除
 
 ``` js
 // 设置
@@ -1602,7 +1600,7 @@ localStorage.removeItem('username');
 localStorage.clear();
 ```
 
-### storage事件
+#### storage事件
 
 当storage发生改变的时候触发。 当前页面对storage的操作会触发其他页面的storage事件 事件的回调函数中有一个参数event, 是一个StorageEvent对象，提供了一些实用的属性, 如下表：
 
@@ -1613,15 +1611,15 @@ localStorage.clear();
 |newValue|any|The new value, or null if an item was added|
 |url/uri|string|The page that called the method that triggered this change|
 
-## sessionStorage
+### 8.3sessionStorage
 
 参考 `localStorage` .
 
-### 特点
+#### 特点
 
 用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage即被销毁，或者在新窗口打开同源的另一个页面，sessionStorage也是没有的。
 
-## cookie、localStorage、sessionStorage区别
+### 8.4cookie、localStorage、sessionStorage区别
 
 * 相同：在本地（浏览器端）存储数据
 * 不同：
@@ -1639,16 +1637,16 @@ localStorage.clear();
 
 > [原文地址：https://www.cnblogs.com/qianduantuanzhang/p/8193892.html](https://www.cnblogs.com/qianduantuanzhang/p/8193892.html)
 
-## Fetch随手记
+## 9. Fetch随手记
 
 `Fetch` 基于 `Promise` ，与 `XMLHttpRequest` 完全不同，它是ES2018新增的API，用于实现客户端和服务端信息通信，可以借用 `fetch-polyfill` 解析成ajax实现兼容大部分浏览器。
 
-### Fetch和Ajax的不同
+### 9.1Fetch和Ajax的不同
 
 * `fetch` 仅在网络故障时或请求被阻止时，才会标记为 `reject` ，其余都是 `resolve` , 即使状态码为404或者500.
 * 默认情况下， `fetch` 不会从服务端发送或接收任何 `cookies` , 如果站点依赖于用户 `session` ，则会导致未经认证的请求（要发送 `cookies` ，必须设置 `credentials` 选项）。
 
-### fetch语法
+### 9.2fetch语法
 
 ``` javascript
 Promise < Response > fetch(url[, init]);
@@ -1667,7 +1665,7 @@ Promise < Response > fetch(url[, init]);
 * referrerPolicy: 指定引用 `HTTP` 头的信息。
 * integrity: 包括请求的 `subresource integrity` 值 （ 例如： sha256-BpfBw7ivV8q2jLiT13fxDYAe2tJllusRSZ273h2nFSE=）。
 
-### 基本的fetch请求
+### 9.3基本的fetch请求
 
 * get系列请求
 
@@ -1714,22 +1712,22 @@ fetch('http://example.com/post/movies.json', {
     })
 ```
 
-### 返回值
+### 9.4返回值
 
 > 返回值是一个 `Promise` ，resolve 时回传 Response 对象。
 
 ![fetch请求的返回值](/images/fetch.png "fetch返回值示例图")
 
-### 参考文档
+### 9.5参考文档
 
 * [https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
 * [MDN使用fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch#%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0)
 
-## JSON数据格式
+## 10. JSON数据格式
 
 > JSON是一个轻量级的数据格式，可以简化表示复杂数据结构的工作量。JSON使用 `JavaScript` 语法的子集表示对象，数组，字符串，数值，布尔值和null。  
 
-### 语法
+### 10.1语法
 
 * 基本值： 与 `JavaScript` 中语法相同，但是不支持特殊值 `undefiend` 。
 * 对象： 复杂数据类型，表示一组无序的键值对儿。
@@ -1772,11 +1770,11 @@ fetch('http://example.com/post/movies.json', {
 ]
 ```
 
-## 解析和序列化
+### 10.2解析和序列化
 
 早起的JSON解析器使用的是 `JavaScript` 的**`evel()`**函数，ECMAScript5对JSON的行为进行了规范化，定义了全局对象 `JSON` ，它包含两个方法 `stringify()` 和 `parse()` , 分别用于把JavaScript对象序列化为JSON字符串和把JSON字符串解析为原生JavaScript对象。
 
-### stringify()
+#### stringify()
 
 `JSON.stringify()` 接受三个参数，第一个是要序列化的javascript对象（必选），第二个是一个数组或者对象，可以用来过滤筛选（可选），第三个参数是一个数字或者字符，用来表示字符串的缩进。
 
@@ -1834,7 +1832,7 @@ console.log(result2);
 //[{"name":100,"age":9,"year":[{"year":2018,"id":1}]},"hehe"]
 ```
 
-### parse()
+#### 10.3parse()
 
 实现序列化相反的功能，讲一个json字符串还原成一个对象，用法和 `JSON.stringfy()` 类似。
 

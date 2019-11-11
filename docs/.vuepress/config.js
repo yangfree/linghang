@@ -1,6 +1,6 @@
 module.exports = {
 	title: '杨洁个人博客',
-	description: '入坑容易脱坑难，呜呼哀哉, 叹叹叹!!!',
+	description: 'Talk is cheap, show me the code.',
 	base: '/',
 	head: [
 		['link', { rel: 'icon', href: '/icon.ico' }]
@@ -108,12 +108,12 @@ module.exports = {
 						link: '/notes/design'
 					},
 					{
-						text: 'git',
-						link: '/notes/git'
+						text: 'Utils工具包',
+						link: '/notes/utils'
 					},
 					{
-						text: 'utils',
-						link: '/notes/utils'
+						text: 'Git笔记',
+						link: '/notes/git'
 					},
 				]
 			},
