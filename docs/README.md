@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/home.jpg
+heroImage: /images/photo.jpg
 heroText: 前端开发攻城狮
 # tagline: 
 actionText: Start Web →
@@ -11,16 +11,16 @@ features:
 - title: 简约派
   details: 喜欢一切简约的事物和人，比如这个主题，比如两点一线的北漂生活，平淡中透露着些许自娱自乐。
 - title: 理想派
-  details: 始终坚定不移，始终保留自己的底线和坚持，理想着现实，现实着理想，相信有一天终会拨开云天见日光。
-footer: WEB Document | 前端静态文档资源站
+  details: 始终坚持自己的理想，并且为此持续付出。不相信快餐式的文化，不投机取巧，坚定踏实的走好每一步。
+footer: 前端笔记 | 做有思想的前端开发者
 ---
-:four_leaf_clover: 这个网站是一个记录学习文档的网站，大部分内容来自于官方文档加上自己的理解（可能会有偏差）。所以，它不一定是正确的，建立此网站的目的是为了方便自己查询，毕竟，现在是大前端时代了，有很多很多的东西需要记忆。
+<!-- 小可不才，燕赵之地人士，现漂于京都，流离于广厦之间。虽壮心不已，然一介书生，既无缚鸡之力，亦无济世之才。只迫于生活之难，学web一行至今。
 
-而自己随着年岁的增长，记忆力却再衰退，有些东西当时可能记住理解了，但是回过头来会忘记，古语说**好记性不如烂笔头**，近几年对这句话体会越来越深，记录下来，时不时的翻看，可以加深自己的记忆。
+相貌尚可，天庭饱满，圆脸樱唇，身宽体泰，落步带音，爱好甚广，三教九流皆可谈之一二。但宽广而不精，浅浅皮毛，甚是烦恼。爱酒而不嗜，爱人而不乱，爱书而不显，故界慎强。好网而知其弊，从业而知其难，不敢懈怠，唯一拼字而已。
 
-当前小站基于 `vuepress` 默认模板搭建，个人感觉还是非常良好的，无论从性能还是简洁度。如果你想做一个只是用来记录文档的小站，我推荐你可以试试 `vuepress` 。
+自小懒惰之习难改，万幸少有父母打点，后有玉人照料，然仪表也泛泛尔。年二十九，性喜淡然，**“快节奏，慢生活”**，吾之警言也。懵懂间成长至今，三十而立近在眼前。故吾常惶恐于深夜，怕上违师长淳淳教导，下背自己赤子之心，上辜父母春光之辉，下负女子万千柔情。遂常策自己，戒骄戒躁，砥砺前行。
 
-最后，欢迎大家去我的博客转转，[Ambitious Uncle: https://www.webblog.vip/](https://www.webblog.vip/)
+古语云草木一秋，人生一世，吾不求闻达于显贵，只求喜乐安康于人间。 -->
 
 <style>
   body {
@@ -28,7 +28,7 @@ footer: WEB Document | 前端静态文档资源站
     color: #666;
   }
 
-  .home .hero h1#main-title {
+  .home .hero h1 {
     font-size: 1.2rem;
   }
 
@@ -38,12 +38,15 @@ footer: WEB Document | 前端静态文档资源站
 
   .home .hero .action .action-button {
     font-size: 1rem;
-    background-color: orange;
+    /* background-color: green; */
     border-bottom: #ccc 1px solid;
     padding: 0.5rem 1rem;
   }
 
   #app .home .hero img {
     max-height: 10rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
   }
 </style>
