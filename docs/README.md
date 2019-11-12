@@ -77,9 +77,6 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
 
   #app .home .hero img {
     max-height: 10rem;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
   }
 
   #app .home .footer {
@@ -89,7 +86,6 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
   .theme-default-content.custom {
     padding: 1rem 1.5rem;
     border-top: 1px solid #eee;
-    /* box-sizing: border-box; */
   }
   .theme-default-content.custom:hover {
     box-shadow: 1px 2px 3px 4px #eee;
