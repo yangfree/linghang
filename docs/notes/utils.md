@@ -33,7 +33,29 @@ function formatDate(date) {
         senc: zero(date.getSeconds())
     };
 
-    return formatDate.year + formatDate.mon + formatDate.day + formatDate.hour + formatDate.minute + formatDate.senc;
+    return formatDate.year + formatDate.mon + formatDate.day +
+        formatDate.hour + formatDate.minute + formatDate.senc;
 }
+```
+
+## 深度克隆
+
+``` js
+/**
+ * Solve the problem: 对象深度克隆
+ * @param: [Object source]
+ * return newObject
+ * 
+ */
+function objDeepCopy(source) {
+    let sourceCopy = source instanceof Array ? [] : {};
+    for (let item in source) {
+        if (source.hasOwnProperty(item)) {
+            sourceCopy[item] = typeof source[item] === 'object' ?
+                objDeepCopy(source[item]) : source[item];
+        }
+    }
+    return sourceCopy;
+};
 ```
 
