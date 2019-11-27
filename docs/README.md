@@ -57,7 +57,7 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
     color: #666;
   }
 
-  .home .hero h1#main-title {
+  .home .hero h1 {
     font-size: 1.2rem;
   }
 
@@ -70,7 +70,7 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
   
   .home .hero .action .action-button {
     font-size: 1rem;
-    background-color: orange;
+    /* background-color: green; */
     border-bottom: #ccc 1px solid;
     padding: 0.5rem 1rem;
   }
@@ -86,7 +86,6 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
   .theme-default-content.custom {
     padding: 1rem 1.5rem;
     border-top: 1px solid #eee;
-    /* box-sizing: border-box; */
   }
   .theme-default-content.custom:hover {
     box-shadow: 1px 2px 3px 4px #eee;
