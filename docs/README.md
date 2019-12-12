@@ -23,34 +23,16 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
 
 古语云草木一秋，人生一世，吾不求闻达于显贵，只求喜乐安康于人间。
 
-<!-- |name|url|
-|---|---|
-|CSS森林|[http://blog.cssforest.org/](http://blog.cssforest.org/)|
-|React小书|[http://huziketang.mangojuice.top/books/react/](http://huziketang.mangojuice.top/books/react/) |
-|阿里图标|[http://www.iconfont.cn/](http://www.iconfont.cn/) |
-|easy-mock| [https://www.easy-mock.com/login](https://www.easy-mock.com/login) |
-|MDN|[https://developer.mozilla.org/zh-CN/](https://developer.mozilla.org/zh-CN/) |
-|Can i use|[https://caniuse.com/#home](https://caniuse.com/#home) |
-|TOM大叔深入JS系列文章|[http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html) |
-|Vue2填坑|[https://segmentfault.com/a/1190000007124470](https://segmentfault.com/a/1190000007124470) |
-|Vuepress | [https://vuepress.vuejs.org/zh/](https://vuepress.vuejs.org/zh/) |
-|VUE开源项目|[https://github.com/opendigg/awesome-github-vue](https://github.com/opendigg/awesome-github-vue) |
-|codePlayer | [http://www.365mini.com/](http://www.365mini.com/)|
-|原生JS|[http://www.fgm.cc/learn/](http://www.fgm.cc/learn/)| -->
-
- - CSS森林   [http://blog.cssforest.org/](http://blog.cssforest.org/) 
- - React小书   [http://huziketang.mangojuice.top/books/react/](http://huziketang.mangojuice.top/books/react/) 
- - 阿里巴巴矢量图标库  [http://www.iconfont.cn/](http://www.iconfont.cn/) 
- - MDNweb文档查询  [https://developer.mozilla.org/zh-CN/](https://developer.mozilla.org/zh-CN/) 
- - Can i use  [https://caniuse.com/#home](https://caniuse.com/#home) 
- - easy-mock(接口模拟)  [https://www.easy-mock.com/login](https://www.easy-mock.com/login) 
- - TOM大叔深入JS系列文章   [http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html) 
- - Vue2填坑攻略  [https://segmentfault.com/a/1190000007124470](https://segmentfault.com/a/1190000007124470) 
- - Vuepress博客  [https://vuepress.vuejs.org/zh/](https://vuepress.vuejs.org/zh/) 
- - codePlayer  [http://www.365mini.com/](http://www.365mini.com/) 
- - 原生JS练习   [http://www.fgm.cc/learn/](http://www.fgm.cc/learn/) 
- - VUE 开源项目汇总  [https://github.com/opendigg/awesome-github-vue](https://github.com/opendigg/awesome-github-vue) 
-
+```md
+- codePlayer  http://www.365mini.com/
+- 原生JS练习   http://www.fgm.cc/learn/ 
+- CSS森林   http://blog.cssforest.org/
+- Vuepress博客  https://vuepress.vuejs.org/zh/
+- MDNweb文档查询  [https://developer.mozilla.org/zh-CN/
+- React小书   http://huziketang.mangojuice.top/books/react/
+- VUE开源项目汇总  https://github.com/opendigg/awesome-github-vue 
+- TOM大叔深入JS系列文章   http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html
+```
 <style>
   body {
     font-size: 15px;
