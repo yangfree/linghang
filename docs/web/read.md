@@ -5,17 +5,44 @@ prev: false
 next: ./css
 ---
 
-# 写给自己
+## Talk is cheap, Show me code.
 
-一般项目分为数据层，业务层和界面层，前端负责的是界面层，但又不能仅仅停留在界面层。大前端的时代带来了很多机遇，但更大的是挑战和变化。
+**`The Zen of Python, by Tim Peters`**
 
-要做好一个前端，必须要掌握好基础，也就是别人口中说的三板斧。 `Html` ， `Css` ， `JavaScript` ，js固然重要，但是也不能忽略html和css，我见过太多前端css掌握的其实并不太好，但也没有要深入学习的意思，切记： **不可有歧视之心**。
+**`Beautiful is better than ugly.`**
 
-框架固然重要，但最重要的还是原生，要知其然知其所以然，要了解算法和设计模式，有精力的话尽可能的吃透。英语对于编程来说不是必须的，但很重要。
+**`Explicit is better than implicit.`**
 
-在前端如火如荼发展的时候，切莫为了新而去新，要脚踏实地的根据业务场景选择合适的技术。没有什么框架是最好的，也没有哪一门语言是最好的，只有在特殊场景下它是最合适的，不要做无谓之争，不要逞口舌之利。
+**`Simple is better than complex.`**
 
-不要因为出发太久而忘记最初的目的，不要迷失在层出不穷的框架和库中，可以多参考别人的思维和代码逻辑，可以当搬运工，也可以尝试着造轮子，但归根结底要有自己东西。
+**`Complex is better than complicated.`**
 
-**`Talk is cheap, Show me code.`**
+**`Flat is better than nested.`**
 
+**`Sparse is better than dense.`**
+
+**`Readability counts.`**
+
+**`Special cases aren't special enough to break the rules.`**
+
+**`Although practicality beats purity.`**
+
+**`Errors should never pass silently.`**
+
+**`Unless explicitly silenced.`**
+
+**`In the face of ambiguity, refuse the temptation to guess.`**
+
+**`There should be one-- and preferably only one --obvious way to do it.`**
+
+**`Although that way may not be obvious at first unless you're Dutch.`**
+
+**`Now is better than never.`**
+
+**`Although never is often better than *right* now.`**
+
+**`If the implementation is hard to explain, it's a bad idea.`**
+
+**`If the implementation is easy to explain, it may be a good idea.`**
+
+**`Namespaces are one honking great idea -- let's do more of those!`**
