@@ -24,6 +24,7 @@ footer: 做一个有信仰，有思想的开发者 | 京ICP备16012293号
 古语云草木一秋，人生一世，吾不求闻达于显贵，只求喜乐安康于人间。
 
 ```md
+- loadsh https://www.lodashjs.com/
 - codePlayer  http://www.365mini.com/
 - 原生JS练习   http://www.fgm.cc/learn/ 
 - CSS森林   http://blog.cssforest.org/
