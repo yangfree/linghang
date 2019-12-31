@@ -5,7 +5,7 @@ prev: false
 next: ./css
 ---
 
-## Talk is cheap, Show me code.
+## Coding
 
 **`The Zen of Python, by Tim Peters`**
 
