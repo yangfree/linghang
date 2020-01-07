@@ -188,7 +188,11 @@ enum initStatus {
 
 ### 3.4 Interface
 
-在面向对象的编程中，接口是一种规范的定义， 它定义了行为和动作的规范； 在程序设计里面，接口起到了一种限制和规范的作用。接口定义了某一批类所需要遵循的规范，接口不关心这些类的内部状态数据，也不关心这些类里方法的实现细节，它只规定这些类里必须提供某些方法，提供这些方法的类就可以满足实际需要。 `typescript` 中的接口类与 `java` ，同时还增加了更加灵活的接口类型， 包括属性、 函数、 可索引和类等。
+在面向对象的编程中，接口是一种规范的定义， 它定义了行为和动作的规范； 在程序设计里面，接口起到了一种限制和规范的作用。接口定义了某一批类所需要遵循的规范，接口不关心这些类的内部状态数据，也不关心这些类里方法的实现细节，它只规定这些类里必须提供某些方法，提供这些方法的类就可以满足实际需要。 
+
+`typescript` 中的接口类与 `java` ，同时还增加了更加灵活的接口类型， 包括属性、 函数、 可索引和类等。
+
+只要传入的值满足接口中定义的条件,那么它就是容许的,接口的类型检测器并不去去检测传入属性的顺序只要相应的属性存在并且类型也是对的就可以。
 
 * 属性的接口 对 `json` 的约束
 
@@ -332,7 +336,38 @@ let web = new Web('zhagsan');
 web.conding('Python');
 ```
 
-### 3.5 abstract
+### 3.5 抽象类 abstract
+
+抽象类一般作为其他派生类的基类使用, 不会直接被实例化. 不同于接口, 抽象类可以包含成员的实现细节,抽象类用 `abstract`定义, 抽象方法只可以定义在抽象类中,也是用`absract`定义, 抽象方法不在抽象类中具体实现, 但必须要在派生类中实现.
+
+```ts
+// 定义抽象类
+abstract class Department {
+    constructor(public name: string) {
+
+    }
+
+    printName():void {
+        console.log(`Department name: ${this.name}`);
+    }
+    abstract printMeeting():void;
+}
+
+// 定义派生类继承抽象类并实现抽象方法
+class AccountingDepartment extends Department {
+    constructor() {
+        super('Accounting and Audting');
+    }
+
+    printMeeting():void {
+        console.log('1111');
+    }
+
+    genner():void {
+        console.log('2222');
+    }
+}
+```
 
 ## 4 类型断言
 
@@ -354,9 +389,15 @@ let oneStringLength: number = (oneString as string).length;
 
 ##  5. 模块化
 
+
+
 ### 5.1 外部模块 export/export default import
 
+在我们平常的业务代码中，模块的简便性和易用性，以及JavaScript世界一脉相承的特点更适合我们日常的需求。
+
 ### 5.2 命名空间 namespace
+
+在`TypeScript`中，通过命名空间的方式进行代码组织. 可以把不同类和模块封装在同一个空间中，对开发大型的项目非常有好处.
 
 ### 5.3 命名空间和模块的区别:
 
