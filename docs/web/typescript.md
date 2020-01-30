@@ -120,7 +120,7 @@ console.log(obj[symbol]);// value
 
 泛型提升了代码的重用性, 使得程序不仅仅支持当前所设计的数据类型, 也能支持将来可能出现的数据类型.
 
-- 函数的泛型
+* 函数的泛型
 
 ``` ts
 // 函数的泛型
@@ -132,11 +132,12 @@ function hello<T>(arg: Array<T>): Array<T> {
 // 参数的数组泛型
 hello<string[]>(['hello'])
 ```
-- 类型的泛型
+
+* 类型的泛型
 
 定义一个泛型类，支持数字和字符串求最小值。
 
-```ts
+``` ts
 class MinNum<T> {
   list: T[] = [];
 
@@ -159,8 +160,7 @@ let m1 = new MinNum<number>();
 let m2 = new MinNum<string>();
 ```
 
-- 泛型接口 泛型类接口
-
+* 泛型接口 泛型类接口
 
 ### 3.3 枚举
 
@@ -192,7 +192,7 @@ enum initStatus {
 
 `typescript` 中的接口类与 `java` ，同时还增加了更加灵活的接口类型， 包括属性、 函数、 可索引和类等。
 
-只要传入的值满足接口中定义的条件,那么它就是容许的,接口的类型检测器并不去去检测传入属性的顺序只要相应的属性存在并且类型也是对的就可以。
+只要传入的值满足接口中定义的条件, 那么它就是容许的, 接口的类型检测器并不去去检测传入属性的顺序只要相应的属性存在并且类型也是对的就可以。
 
 * 属性的接口 对 `json` 的约束
 
@@ -275,7 +275,7 @@ class Ming implements Student {
 
   // 不传参数不会报错  只要实现方法即可
   study() {
-    console.log(`${this.name}在学习语文`);
+    console.log( `${this.name}在学习语文` );
   }
 }
 
@@ -290,16 +290,17 @@ class Hong implements Student {
 
   // 传参
   study(course: string) {
-    console.log(`${this.name}在学习${course}`);
+    console.log( `${this.name}在学习${course}` );
   }
 }
 
 let xiaoHong = new Hong('xiaohong');
 xiaoHong.study('Math');
 ```
+
 **类的继承和接口的继承实现Coding:**
 
-```ts
+``` ts
 interface Person {
   eat(): void;
 }
@@ -314,7 +315,7 @@ class Person {
   }
 
   coding(code: string) {
-    console.log(`${this.name}正在写${code}!`);
+    console.log( `${this.name}正在写${code}!` );
   }
 }
 
@@ -338,9 +339,9 @@ web.conding('Python');
 
 ### 3.5 抽象类 abstract
 
-抽象类一般作为其他派生类的基类使用, 不会直接被实例化. 不同于接口, 抽象类可以包含成员的实现细节,抽象类用 `abstract`定义, 抽象方法只可以定义在抽象类中,也是用`absract`定义, 抽象方法不在抽象类中具体实现, 但必须要在派生类中实现.
+抽象类一般作为其他派生类的基类使用, 不会直接被实例化. 不同于接口, 抽象类可以包含成员的实现细节, 抽象类用 `abstract` 定义, 抽象方法只可以定义在抽象类中, 也是用 `absract` 定义, 抽象方法不在抽象类中具体实现, 但必须要在派生类中实现.
 
-```ts
+``` ts
 // 定义抽象类
 abstract class Department {
     constructor(public name: string) {
@@ -348,7 +349,7 @@ abstract class Department {
     }
 
     printName():void {
-        console.log(`Department name: ${this.name}`);
+        console.log( `Department name: ${this.name}` );
     }
     abstract printMeeting():void;
 }
@@ -389,20 +390,18 @@ let oneStringLength: number = (oneString as string).length;
 
 ##  5. 模块化
 
-
-
 ### 5.1 外部模块 export/export default import
 
 在我们平常的业务代码中，模块的简便性和易用性，以及JavaScript世界一脉相承的特点更适合我们日常的需求。
 
 ### 5.2 命名空间 namespace
 
-在`TypeScript`中，通过命名空间的方式进行代码组织. 可以把不同类和模块封装在同一个空间中，对开发大型的项目非常有好处.
+在 `TypeScript` 中，通过命名空间的方式进行代码组织. 可以把不同类和模块封装在同一个空间中，对开发大型的项目非常有好处.
 
 ### 5.3 命名空间和模块的区别:
 
-- 命名空间：内部模块， 主要用于组织代码，避免命名冲突。
-- 模块： ts的外部模块的简称， 侧重于代码的复用， 一个模块里面可能会有多个命名空间。
+* 命名空间：内部模块， 主要用于组织代码，避免命名冲突。
+* 模块： ts的外部模块的简称， 侧重于代码的复用， 一个模块里面可能会有多个命名空间。
 
 ## 6. 装饰器
 
@@ -410,12 +409,12 @@ let oneStringLength: number = (oneString as string).length;
 
 装饰器的写法： 
 
-- 普通装饰器（无法传参）
-- 装饰器工厂（可传参）
+* 普通装饰器（无法传参）
+* 装饰器工厂（可传参）
 
 ### 6.1 类装饰器
 
-```ts
+``` ts
 // 1. 普通装饰器
 function classModify(params: any): void {
   console.log(params); // 修饰的类
@@ -456,3 +455,4 @@ class HttpClient {
 **属性装饰器 > 方法装饰器 > 方法参数装饰器 > 类装饰器**
 
 如果拥有多个同样的装饰器，它会先执行后面的，在执行前面的。
+
