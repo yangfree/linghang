@@ -9,4 +9,4 @@ node_modules/
 .idea
 landscape/
 node_cache/
-/docs/dist/*
+docs/.vuepress/dist/*
