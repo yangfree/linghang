@@ -1,6 +1,7 @@
 ---
 title: Js设计模式
 sidebar: auto
+pageClass: my-design
 ---
 
 ![javascript中类的原型图](/images/class_prototype.png "javascript中类的原型图")

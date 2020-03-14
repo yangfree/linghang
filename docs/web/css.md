@@ -1,5 +1,5 @@
 ---
-title: 深入Css
+title: Css小书
 sidebar: auto
 prev: false
 next: ./javascript
