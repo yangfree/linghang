@@ -76,7 +76,30 @@ next: ./javascript
 
 ## 常用样式的解决方案
 
-以下是业务中常见对一些Css代码总结。
+以下是业务中常见对一些 Css 代码总结。
+
+### 隐藏页面中的元素有哪些方法
+
+- 完全隐藏->元素从 dom 中消失，不占据空间。
+
+1. `display: none`.
+2. `<div hidden></div>`
+
+- 视觉上的隐藏->屏幕中不可见，占据空间。
+
+1. 利用定位或者距离移除视觉之外，常见但有`margin-left: -9999px; height:0`;`position:absolute;left:-9999px`.
+2. 利用`transform: scale(0);height:0;`, `transform:translateX(-9999px);height:0;`, `transform: rotateY(90deg)`
+3. 将其大小设置为 0.`width:0;height:0;font-size:0;`
+4. 透明度设置为 0.`opacity:0`
+5. `visibility: hidden;`
+6. 利用定位层级覆盖。
+7. `clip-path: polygon(0 0, 0 0, 0 0, 0 0);`
+
+- 语义上的隐藏->读屏软件不可读，但正常占据空间
+
+```html
+<div aria-hidden="true"></div>
+```
 
 ### `css` 中的多余隐藏以... 结尾
 
@@ -308,7 +331,7 @@ dot::before {
 
 ## 移动端的适配
 
-### flex布局
+### flex 布局
 
 任何容器都可以指定为 `flex` 布局。
 
