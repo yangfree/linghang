@@ -1,14 +1,15 @@
 ---
-title: '全栈开发'
+title: "全栈开发"
 sidebar: auto
 ---
-## 前端必备的nginx知识
+
+## 前端必备的 nginx 知识
 
 `nginx`作为一个反向代理服务器，对于前端来说也是必备的一个高效神器，它可以解决如下问题:
 
 - 跨域请求
 - 静态资源服务器
-- 配置gzip
+- 配置 gzip
 - 请求过滤
 - 负载均衡
 
@@ -22,22 +23,22 @@ sidebar: auto
 
 ![反向代理](/images/nginx_2.png)
 
-### nginx中常用的全局变量
+### nginx 中常用的全局变量
 
-|变量名|功能|
-|---|---|
-|$host|请求信息中的Host，如果请求中没有Host则等于设置服务器名|
-|$request_method|客户端请求类型，如:post,get...|
-|$remote_addr|客户端的ip地址|
-|$args|客户端中请求的参数|
-|$content_length|请求头中content_length字段|
-|$http_user_agent|客户端agent信息|
-|$http_cookie|客户端cookie信息|
-|$remote_port|客户端端口|
-|$server_protocol|请求中使用的协议，如Http/1.0, Http/1.1...|
-|$server_addr|服务器地址|
-|$server_name|服务器名称|
-|$server_port|服务器端口号|
+| 变量名            | 功能                                                      |
+| ----------------- | --------------------------------------------------------- |
+| \$host            | 请求信息中的 Host，如果请求中没有 Host 则等于设置服务器名 |
+| \$request_method  | 客户端请求类型，如:post,get...                            |
+| \$remote_addr     | 客户端的 ip 地址                                          |
+| \$args            | 客户端中请求的参数                                        |
+| \$content_length  | 请求头中 content_length 字段                              |
+| \$http_user_agent | 客户端 agent 信息                                         |
+| \$http_cookie     | 客户端 cookie 信息                                        |
+| \$remote_port     | 客户端端口                                                |
+| \$server_protocol | 请求中使用的协议，如 Http/1.0, Http/1.1...                |
+| \$server_addr     | 服务器地址                                                |
+| \$server_name     | 服务器名称                                                |
+| \$server_port     | 服务器端口号                                              |
 
 ### 基本配置
 
@@ -126,3 +127,95 @@ http{
     }
 }
 ```
+
+## WebSocket
+
+> webWebSocket 协议是基于 TCP 的一种新的网络协议，它实现了浏览器和服务器全双工通讯。WebSocket 是一种持久协议，它让浏览器和服务器之间互传数据变得简单。
+
+![websocket和http](/images/ws.png)
+
+### WebSocket 介绍
+
+创建 websocket 对象。
+
+```js
+let socket = new WebSocket(url, [protocol]);
+```
+
+#### WebSocket 对象的属性
+
+|       属性        | 描述                                                                                                                                                                   |
+| :---------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Socket.readyState | 表示链接状态，可以是以下的值：<br />- 0 表示链接尚未建立<br />- 1 表示链接已建立，可以进行通信<br />- 2 表示链接正在进行关闭<br />- 3 表示链接已经关闭或者链接不能打开 |
+
+#### WebSocket 事件
+
+| 事件    | 事件处理程序     | 描述                       |
+| ------- | ---------------- | -------------------------- |
+| open    | Socket.onopen    | 链接建立时触发             |
+| message | socket.onmessage | 客户端接受服务端数据时触发 |
+| error   | socket.onerror   | 通信发生错误时触发         |
+| close   | socket.onclose   | 链接关闭时触发             |
+
+#### WebSocket 方法
+
+- socket.send(): 发送数据
+- socket.close(): 关闭链接
+
+### WebSocket 基本使用
+
+```js
+let socket = new WebSocket("ws://localhost:3000");
+socket.addEventListener("open", () => {
+  socket.send("Hello websocket!");
+});
+socket.addEventListener("message", msg => {
+  console.log(`received ${msg.data}`);
+});
+socket.addEventListener("close", () => {
+  console.log("socket connect close.");
+});
+```
+
+### Socket.io
+
+Socket.io 有两部分组成
+
+- 与 Node.js Http Server 集成（或安装在其他）的服务器：`socket.io`
+- 在浏览器端加载的客户端库`socket.io.client`
+
+在开发过程中，`socket.io`为我们自动为客户端服务，因此我们需要安装它的模块
+
+```bash
+npm install socket.io
+```
+
+在前端页面我们需要引入客户端文件
+
+```html
+<script src="socket.io/socket.io.js"></script>
+<script>
+  let socket = io();
+</script>
+```
+
+在后端页面，我们需要把创建好的服务器传递给`socket.io`返回的函数。
+
+```js
+// 将服务传递给io模块
+let io = require("socket.io")(http);
+
+// 监听connection事件，参数socket是每个链接的对象
+io.on("connection", socket => {
+  console.log("A user connected");
+
+  socket.on("chat message", function(msg) {
+    io.emit("chat message", msg);
+  });
+  socket.on("disconnect", () => {
+    console.log("user disconnect.");
+  });
+});
+```
+
+通信主要有两个方法，`emit`和`on`，谁要发消息就`emit`一个事件（名称自定义），然后在需要接受消息的页面用`on`监听自定义的事件名称，参数就是发过来的消息。
