@@ -113,6 +113,8 @@ http{
         location / {
                 root        /web/resume/dist;
                 index       index.html      index.htm;
+                # 解决vue项目部署刷新404的问题
+                try_files $uri $uri/ /index.html;
         }
 
         # 配置404页面

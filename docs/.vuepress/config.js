@@ -5,100 +5,119 @@ module.exports = {
   head: [["link", { rel: "icon", href: "/icon.ico" }]],
   locales: {
     "/": {
-      lang: "zh-CN"
-    }
+      lang: "zh-CN",
+    },
   },
   themeConfig: {
     // 顶部导航
     nav: [
       {
-        text: '计算机基础',
-        link: '/computer/'
+        text: "大前端",
+        items: [
+          {
+            text: "前端相关",
+            items: [
+              {
+                text: "Css小书",
+                link: "/web/css.md",
+              },
+              {
+                text: "JavaScript知识点梳理",
+                link: "/web/javascript.md",
+              },
+              {
+                text: "Es6学习总结",
+                link: "/web/es6.md",
+              },
+              {
+                text: "TypeScript学习总结",
+                link: "/web/typescript.md",
+              },
+              {
+                text: "Vue笔记",
+                link: "/web/vue.md",
+              },
+              {
+                text: "React笔记",
+                link: "/web/react.md",
+              }
+            ],
+          },
+          {
+            text: "Webpack系列",
+            items: [
+              {
+                text: "webpack基础使用",
+                link: "/web/webpack/webpack-1.md",
+              },
+              {
+                text: "webpack优化原则",
+                link: "/web/webpack/webpack-2.md",
+              },
+              {
+                text: "webpack原理分析",
+                link: "/web/webpack/webpack-3.md",
+              },
+              {
+                text: "webpack深入学习",
+                link: "/web/webpack/webpack-4.md",
+              },
+            ],
+          },
+          {
+            text: "杂七杂八",
+            items: [
+              {
+                text: "nginx",
+                link: "/web/node.md",
+              },
+              {
+                text: "git查询小册",
+                link: "/web/git.md",
+              },
+              {
+                text: "vim快捷键查询",
+                link: "/web/vim.md",
+              },
+            ],
+          },
+          {
+            text: "数据库",
+            items: [
+              {
+                text: "Mongodb",
+                link: "/web/mongodb.md",
+              },
+            ],
+          },
+        ],
       },
       {
-        text: "前端基础",
-        link: '/web/'
+        text: "设计模式",
+        link: "/design/",
       },
       {
-        text: '全栈开发',
-        link: '/node/'
+        text: "算法",
+        link: "/algorithm/",
       },
       {
-        text: '数据库',
-        link: '/database/'
+        text: "计算机基础",
+        link: "/computer/",
       },
-      {
-        text: "工具类库",
-        link: '/tools/'
-      },
-      {
-        text: '设计模式',
-        link: '/design/'
-      },
-      {
-        text: '算法',
-        link: '/algorithm/'
-      },
-      // {
-      //   text: 'MongoDB',
-      //   link: '/mongodb/'
-      // },
-      // {
-      // 	text: 'Node', items: [
-      // 		{
-      // 			text: '基本概念',
-      // 			link: '/node/concept'
-      // 		},
-      // 		{
-      // 			text: 'Node基础',
-      // 			link: '/node/node'
-      // 		},
-      // 		{
-      // 			text: 'Express框架',
-      // 			link: '/node/express'
-      // 		},
-      // 	]
-      // },
-      // {
-      //   text: "文章列表",
-      //   items: [
-      //     {
-      //       text: "前端系列文章",
-      //       link: "/notes/javascript"
-      //     },
-      //     {
-      //       text: "Js设计模式",
-      //       link: "/notes/design"
-      //     },
-      //     {
-      //       text: "Utils工具包",
-      //       link: "/notes/utils"
-      //     },
-      //     {
-      //       text: "Git笔记",
-      //       link: "/notes/git"
-      //     }
-      //   ]
-      // }
     ],
 
-    // 侧边栏
-    // sidebar: {
-    //   "/web/": [""],
-    //   "/node/": [",", "node"]
-    // },
     sidebarDepth: 2, // 默认 1 提取到 h2，0 为禁用，2 为 h2，h3
     displayAllHeaders: false, // 默认值：false 侧边栏只会显示由当前活动页面的标题组成的链接
     activeHeaderLinks: true, // 默认值：true 滚动时通过 hash 高亮侧边栏标题
 
     // Git 仓库和编辑链接 你的仓库
-    repo: "https://github.com/yangfree",
+    repo: "https://jiepp.com",
     // 导航栏上的文本
-    repoLabel: "Github",
+    repoLabel: "个人小站",
 
     // editLinks: true,
     // 默认为 "Edit this page"
     // editLinkText: 'Edit this page',
-    lastUpdated: "Last Updated" // string | boolean
-  }
+    lastUpdated: "Last Updated", // string | boolean
+  },
 };
