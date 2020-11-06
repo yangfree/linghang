@@ -1,0 +1,323 @@
+/* 清除内置normalize.css的默认样式 */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", arial, "\5b8b\4f53", sans-serif, tahoma;
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+ul,
+ol,
+dl,
+form,
+header,
+footer {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* a标签的默认样式 */
+a {
+    color: #333;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a:active,
+a:visited,
+a:focus {
+    /*color: #666;*/
+    text-decoration: none;
+}
+
+/*
+ *  --> display: inline-block || block
+ *  --> max-width
+*/
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+/* 公共导航样式*/
+.navbar-primary {
+    background-color: #2998e2;
+    margin: 0;
+    /*overflow: hidden;*/
+}
+
+.navbar-primary .navbar-header .navbar-toggle {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.navbar-primary .navbar-header .navbar-toggle i.glyphicon-th-large {
+    color: #fff;
+    font-size: 25px;
+}
+
+.navbar-primary .navbar-header .website-info {
+    color: #fff;
+}
+
+.navbar-primary .navbar-header .website-info .website-logo {
+    margin-top: 8px;
+}
+
+.navbar-primary .navbar-header a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.navbar-primary .navbar-header a img {
+    max-width: 165px;
+    max-height: 48px;
+}
+
+
+.navbar-primary .navbar-right {
+    margin-right: 0;
+}
+
+.navbar-primary .navbar-right li a {
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 15px;
+    margin: 0;
+    line-height: 65px;
+}
+
+.navbar-primary .navbar-right li a .badge {
+    background-color: #fff;
+    color: #0076c3;
+}
+
+.navbar-primary .navbar-right .active,
+.navbar-primary .navbar-right li a:hover,
+.navbar-primary .navbar-right li a:visited,
+.navbar-primary .navbar-right li a:focus {
+    background-color: #0099cc;
+}
+
+.navbar-primary .navbar-right li .glyphicon {
+    color: #fff;
+    font-size: 20px;
+    vertical-align: -2px;
+}
+
+.navbar-primary #login {
+    margin: 0 15px;
+}
+
+.navbar-primary #login .user-info {
+    margin-top: 15px;
+}
+
+.navbar-primary #login .user-info .img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.navbar-primary #login .user-info .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-primary #login .user-info span {
+    color: #fff;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+/* 登录注册按钮 */
+.navbar-primary .login-box {
+    position: absolute;
+    right: 15px;
+    bottom: -65px;
+    width: 120px;
+    min-height: 100%;
+    height: 100%;
+    display: none;
+    z-index: 999;
+}
+
+.navbar-primary .login-box .list-group-item.active a {
+    color: #fff;
+}
+
+/*  图片展示区域样式   */
+.bg-img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 25px;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.bg-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/*  网站公告样式   */
+.website-notice {
+    padding: 0 5%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    position: relative;
+}
+
+.website-notice .glyphicon-remove {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    cursor: pointer;
+    color: red;
+}
+
+.website-notice .glyphicon-volume-up {
+    font-size: 20px;
+    vertical-align: -3px;
+}
+
+/*  课程展示页面 */
+.project-show {
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+.project-show .project-info {
+    height: 120px;
+    position: relative;
+}
+
+.project-show .project-info .img {
+    padding: 5px 15px;
+    height: 100%;
+}
+
+.project-show .project-info .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.project-show .project-info .word {
+    padding: 15px 15px 0 15px;
+}
+
+.project-show .project-info .word h3 {
+    margin-bottom: 10px;
+}
+
+.project-show .project-info .word p {
+    line-height: 25px;
+}
+
+.project-show .project-info .word p span {
+    margin-right: 5%;
+}
+
+.project-show .project-info .button-group {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+}
+
+.project-show .project-info .button-group a {
+    color: #fff;
+    font-size: 12px;
+}
+
+.project-show .project-info .button-group .release-course {
+    background-color: #00479d;
+}
+
+.project-show .project-info .button-group .end-course {
+    background-color: #eb6100;
+}
+
+.project-show .project-info .button-group .delete-course {
+    background-color: #ff0000;
+}
+
+.project-show .project-info .button-group .edit-course {
+    background-color: #00a0e9;
+}
+
+/* 二级导航 */
+.navbar-default {
+    border-bottom: 2px solid #2998e2;
+}
+
+.navbar-default .navbar-nav {
+    margin-bottom: -1px;
+}
+
+.navbar-default .icon-list li a i {
+    font-size: 20px;
+    vertical-align: 0;
+    margin-right: 2px;
+    color: #2998e2;
+}
+
+.navbar-default .icon-list li a i.icon-fanhui1 {
+    vertical-align: -1px;
+}
+
+.navbar-default .icon-list li a i.glyphicon {
+    vertical-align: -3px;
+}
+
+.navbar-default .navbar-collapse .navbar-nav li.active a {
+    background-color: #2997e2;
+    color: #fff;
+}
+
+/* 底部样式 */
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #535353;
+    height: 60px;
+}
+
+.footer .container-fluid p {
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+    color: #e2e1e1;
+}

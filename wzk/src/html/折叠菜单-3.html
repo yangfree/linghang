@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 网站描述和关键词  针对SEO -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 开发人员选项 -->
+    <link rel="author" href="../read/humans.txt">
+    <!-- 网站icon -->
+    <link rel="icon" href="../images/36x36.png">
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="../css/public/bootstrap.css">
+    <!-- 引入公用组件样式 -->
+    <link rel="stylesheet" href="../css/public/lh-public.css">
+    <!-- 引入页面样式 -->
+    <link rel="stylesheet" href="../css/personal-center.css">
+    <!-- 引入折叠菜单样式 -->
+    <link rel="stylesheet" href="../css/lh-menu.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="../iconfont/2018-10-18/iconfont.css">
+    <!-- 针对IE8及以下浏览器兼容H5标签和媒体查询 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 顶部导航条 -->
+<nav class="navbar navbar-static-top navbar-primary" id="header">
+    <nav class="container-fluid">
+        <div class="navbar-header col-lg-3">
+            <a href="#" class="website-info">
+                <div class="row">
+                    <div class="website-logo col-lg-5">
+                        <img class="img-responsive img-rounded" src="../images/ic_launcher_round%20.png" alt="微知库logo"
+                             title="微知库logo">
+                    </div>
+                    <!--<h1 class="website-name col-lg-10">微知库</h1>-->
+                </div>
+            </a>
+        </div>
+        <div id="navbar" class="col-lg-9">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">合作专业</a></li>
+                <li><a href="#">合作院校</a></li>
+                <li><a href="#">管理中心</a></li>
+                <li><a href="#">课程中心</a></li>
+                <li><a href="#">资源中心</a></li>
+                <li class="dropdown">
+                    <a href="#">通知公告 <span class="badge">142</span></a>
+                </li>
+                <li><a href="#">客户端</a><i class="glyphicon glyphicon-user"></i></li>
+            </ul>
+        </div>
+    </nav>
+</nav>
+<!-- 网站公告 -->
+<div class="website-notice bg-warning container-fluid text-overflow" id="topic">
+    <i class="glyphicon glyphicon-volume-up"></i>
+    <span>
+            通知：若无缘，三千大千世界，百万菩提众生，为何与我笑颜独展，惟独与汝相见？
+            若有缘，待到灯花百结之后，三尺之雪，一夜白发，至此无语，却只有灰烬，没有
+            复燃。若无缘，三千大千世界，百万菩提众生，为何与我笑颜独展，惟独与汝相见？
+            若有缘，待到灯花百结之后，三尺之雪，一夜白发，至此无语，却只有灰烬，没有
+            复燃。若无缘，三千大千世界，百万菩提众生，为何与我笑颜独展，惟独与汝相见？
+            若有缘，待到灯花百结之后，三尺之雪，一夜白发，至此无语，却只有灰烬，没有
+            复燃。
+    </span>
+    <i class="glyphicon glyphicon-remove"></i>
+</div>
+
+<!-- 课程展示页面 -->
+<div class="container-fluid project-show" id="projectShow">
+    <div class="row project-info">
+        <div class="col-lg-2 img">
+            <img class="img-responsive center-block" src="../images/timg.jpg" alt="">
+        </div>
+        <div class="col-lg-10 word">
+            <h3>课程名称</h3>
+            <p class="text-left text-overflow">课程简介：
+                课程简介课程名称课程简介课程名称课程简介课程名称课程简介课程名称课程简介课程名称
+                课程简介课程名称课程简介课程名称课程简介课程名称课程简介课程名称课程简介课程名称
+                课程简介课程名称课程简介课程名称课程简介课程名称课程简介课程名称课程简介课程名称
+            </p>
+            <p>
+                <span>开课时间: 即将开课</span>
+                <span>开课时间: 即将开课</span>
+                <span>开课时间: 即将开课</span>
+                <span>开课时间: 即将开课</span>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- 二级导航条 -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-home"></i>
+                        主页</a>
+                </li>
+                <li><a href="#">学习内容</a></li>
+                <li><a href="#">作业测试</a></li>
+                <li><a href="#">实训任务</a></li>
+                <li><a href="#">答疑讨论</a></li>
+                <li><a href="#">题库</a></li>
+                <li><a href="#">素材</a></li>
+                <li><a href="#">成员</a></li>
+                <li><a href="#">消息公告</a></li>
+                <li><a href="#">笔记</a></li>
+                <li><a href="#">详情</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-stats"></i>
+                        <span>统计分析</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-fast-backward"></i>
+                        <span>返回</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="hideNav">
+                        <i class="glyphicon glyphicon-menu-up"></i>
+                        <span>收起菜单</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 主要内容 -->
+<div class="main">
+    <div class="container-fluid">
+        <div class="col-lg-2">
+            <ul class="list-group slider-down">
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项1</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项2</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项3</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="">
+                        <span>列表选项4</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项5</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项1</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项2</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项3</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项4</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="">
+                        <span>列表选项5</span>
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-10">
+            <!-- 路径导航 -->
+            <ol class="breadcrumb">
+                <li>
+                    <i class="glyphicon glyphicon-globe"></i>
+                    <a href="#">首页</a>
+                </li>
+                <li><a href="#">分类</a></li>
+                <li class="active">文章详细信息</li>
+            </ol>
+            <!--  头部 -->
+            <div class="container-fluid row main-right-header">
+                <div class="col-lg-2">
+                    <label for="">
+                        <input type="checkbox">
+                        <span>全选</span>
+                    </label>
+                </div>
+                <div class="col-lg-10 text-right">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select title="" class="form-control">
+                                <option value="">多选框</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select title="" class="form-control">
+                                <option value="">多选框示例</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select>
+                        </div>
+                        <div class="form-group main-search">
+                            <input type="password" class="form-control" placeholder="请输入搜索文字">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <button class="btn btn-primary">搜索</button>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-warning">Submit</button>
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <!-- 折叠菜单 -->
+            <div class="container-fluid main-right-body">
+                <div class="lh-menu" id="lhMenu">
+                    <ul class="menu-first">
+                        <li class="menu-first-li">
+                            <div class="row bg-default">
+                                <span class="col-lg-2 text-center menu-title">第一章</span>
+                                <span class="col-lg-10">
+                                    <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                    <span>文档标题文档标题文档标题文档标题文档标题文档标题文档标题</span>
+                                </span>
+                            </div>
+                            <ul class="menu-second col-lg-offset-2">
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">1</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">2</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-first-li">
+                            <div class="row bg-default">
+                                <span class="col-lg-2 text-center menu-title">第一章</span>
+                                <span class="col-lg-10">
+                                    <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                    <span>文档标题文档标题文档标题文档标题文档标题文档标题文档标题</span>
+                                </span>
+                            </div>
+                            <ul class="menu-second col-lg-offset-2">
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">1</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">2</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-first-li">
+                            <div class="row bg-default">
+                                <span class="col-lg-2 text-center menu-title">第一章</span>
+                                <span class="col-lg-10">
+                                    <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                    <span>文档标题文档标题文档标题文档标题文档标题文档标题文档标题</span>
+                                </span>
+                            </div>
+                            <ul class="menu-second col-lg-offset-2">
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">1</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">2</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-first-li">
+                            <div class="row bg-default">
+                                <span class="col-lg-2 text-center menu-title">第一章</span>
+                                <span class="col-lg-10">
+                                    <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                    <span>文档标题文档标题文档标题文档标题文档标题文档标题文档标题</span>
+                                </span>
+                            </div>
+                            <ul class="menu-second col-lg-offset-2">
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">1</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">2</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-first-li">
+                            <div class="row bg-default">
+                                <span class="col-lg-2 text-center menu-title">第一章</span>
+                                <span class="col-lg-10">
+                                    <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                    <span>文档标题文档标题文档标题文档标题文档标题文档标题文档标题</span>
+                                </span>
+                            </div>
+                            <ul class="menu-second col-lg-offset-2">
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">1</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">2</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-first-li">
+                            <div class="row bg-default">
+                                <span class="col-lg-2 text-center menu-title">第一章</span>
+                                <span class="col-lg-10">
+                                    <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                    <span>文档标题文档标题文档标题文档标题文档标题文档标题文档标题</span>
+                                </span>
+                            </div>
+                            <ul class="menu-second col-lg-offset-2">
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">1</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="bg-default">
+                                        <span class="">
+                                            <em class="menu-number">2</em>
+                                            <i class="bg-yuanquan"></i>
+                                        </span>
+                                        <span class="">
+                                            <i class="iconfont icon-xiaotuziCduan_1"></i>
+                                            <span>章节标题章节标题章节标题章节标题章节标题章节标题</span>
+                                        </span>
+                                    </div>
+                                    <ul class="menu-third">
+                                        <li>
+                                            <i class="iconfont icon-shipin-"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-wendang"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-yinle"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                        <li>
+                                            <i class="iconfont icon-zuoye"></i>
+                                            <span>视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容视频内容</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 网站底部 -->
+<div class="footer">
+    <div class="container-fluid">
+        <p class="text-center">
+            <i class="glyphicon glyphicon-copyright-mark"></i>
+            <span>领航未来北京有限公司版权所有</span>
+        </p>
+    </div>
+</div>
+<!-- 引入jquery 文件版本1.91 -->
+<script src="../js/jquery.js"></script>
+<!-- 引入bootstrap.js文件 -->
+<script src="../js/bootstrap.js"></script>
+<!-- 折叠菜单组件 -->
+<script src="../js/lhMenu.js"></script>
+<script type="text/javascript" charset="UTF-8">
+    $(function () {
+        // 绑定执行元素，传递参数类名
+        $.fn.lhMenu('.menu-first');
+        $.fn.lhMenu('.menu-second');
+    });
+</script>
+</body>
+</html>

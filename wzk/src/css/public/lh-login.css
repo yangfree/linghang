@@ -1,0 +1,74 @@
+/* 公用样式 */
+body {
+    width: 100%;
+    height: 100%;
+    background: url("../../images/login-bg.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* 1024*768px */
+@media only all and (max-width: 1024px) and (max-height: 768px) {
+    body {
+        -webkit-background-size: 1024px 768px;
+        -moz-background-size: 1024px 768px;
+        -o-background-size: 1024px 768px;
+        background-size: 1024px 768px;
+    }
+}
+
+/* 640*480px */
+@media only all and (max-width: 640px) and (max-height: 480px) {
+    body {
+        -webkit-background-size: 640px 480px;
+        -moz-background-size: 640px 480px;
+        -o-background-size: 640px 480px;
+        background-size: 640px 480px;
+    }
+}
+
+/* 导航样式 */
+.navbar {
+    padding: 15px 50px 5px 50px;
+    border-bottom: 1px solid #333;
+}
+
+.navbar .navbar-collapse .nav {
+    margin-left: 25px;
+}
+
+.navbar .navbar-collapse .nav a {
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.navbar .navbar-collapse .nav a:hover,
+.navbar .navbar-collapse .nav a:visited.navbar,
+.navbar .navbar-collapse .nav a:active,
+.navbar .navbar-collapse .nav a:focus {
+    background-color: transparent;
+}
+
+.navbar .navbar-collapse .nav a span {
+    font-size: 14px;
+}
+
+/* 底部样式 */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #121421;
+    height: 60px;
+}
+
+.footer .container-fluid p {
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}

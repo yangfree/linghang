@@ -1,0 +1,251 @@
+.navbar-default {
+  margin-bottom: 0;
+}
+.main {
+  background-color: #f2f2f2;
+}
+.main .center {
+  width: 1200px !important;
+  margin: 0 auto;
+}
+.main .center .min-height-default {
+  min-height: 580px;
+}
+.main .center .min-height-default .title-box {
+  background-color: #fff;
+  text-align: center;
+  margin: 30px 0 0;
+  padding: 20px 20px 15px;
+  border-bottom: 1px solid #eee;
+}
+.main .center .min-height-default .title-box h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+.main .center .min-height-default .title-box .title-info {
+  margin-top: 20px;
+  color: #999;
+  font-size: 14px;
+}
+.main .center .min-height-default .title-box .title-info span {
+  letter-spacing: 5px;
+}
+.main .center .min-height-default .title-box .title-info span em {
+  font-style: normal;
+}
+.main .center .min-height-default .title-box .title-info span input[type=text] {
+  font-size: 18px;
+  width: 45px;
+  margin: -4px 10px 0 0;
+  background-color: transparent;
+  vertical-align: middle;
+  text-align: center;
+  color: #f00;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ffa028;
+}
+.main .center .min-height-default .content-box {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 50px;
+  background-color: #fff;
+}
+.main .center .min-height-default .content-box .content-box-inner {
+  min-height: 300px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-type {
+  font-size: 16px;
+  color: #555;
+  padding-bottom: 10px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-type em {
+  margin-right: 5px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-type a {
+  color: #666;
+  cursor: default;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-type span {
+  font-size: 14px;
+  margin-right: 20px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-type span b {
+  font-size: 16px;
+  margin: 0 5px;
+  color: #f00;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body {
+  margin-bottom: 20px;
+  padding: 0 0 15px 30px;
+  font-size: 16px;
+  color: #777;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group {
+  margin-bottom: 0;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group .list-group-item {
+  border: none;
+  padding: 8px 10px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group .list-group-item input[type=radio],
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group .list-group-item input[type=checkbox] {
+  vertical-align: -3px;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group .list-group-item span em {
+  font-style: normal;
+  margin-right: 5px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group .list-group-item .title {
+  margin-bottom: 10px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-body .list-group .list-group-item .word-box {
+  max-width: 60%;
+  width: 50%;
+  height: auto;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-progress {
+  height: 16px;
+}
+.main .center .min-height-default .content-box .content-box-inner .content-progress .content-progress-inner {
+  line-height: 16px;
+  background-color: #5cb85c;
+  min-width: 2em;
+}
+.main .center .min-height-default .content-box .content-box-inner .group-btn {
+  box-sizing: border-box;
+}
+.main .center .min-height-default .content-box .content-box-inner .group-btn a {
+  color: #fff;
+  background-color: #f0ad4e;
+  border: none;
+  width: 125px;
+}
+.main .center .min-height-default .content-box .content-box-inner .group-btn a.btn-success {
+  background-color: #5cb85c;
+}
+.main .center .min-height-default .content-box .prompt-box {
+  position: absolute;
+  top: 10px;
+  right: -450px;
+  width: 450px;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 1px 2px 1px 2px #ccc;
+  -moz-box-shadow: 1px 2px 1px 2px #ccc;
+  box-shadow: 1px 2px 1px 2px #ccc;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-word {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: -40px;
+  text-align: center;
+  line-height: 35px;
+  background-color: #d9534f;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-word i {
+  font-size: 20px;
+  color: #fff;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-word span {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  line-height: 30px;
+  border-radius: 4px;
+  top: 0;
+  left: -110px;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-word span:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  right: -6px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list {
+  position: relative;
+  min-height: 120px;
+  max-height: 280px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px 15px 55px 15px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list a {
+  float: left;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 0 10px 10px 0;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list a:hover {
+  background-color: #e2e2e2;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list a.active {
+  color: #e5e5e5;
+  border: 1px solid #d9534f;
+  background-color: #d9534f;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list .prompt-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #777;
+  padding: 10px 25px 0 0;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  -moz-box-shadow: 1px 1px 1px 1px #ccc;
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list .prompt-info p {
+  margin: 0;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list .prompt-info p a {
+  width: 15px;
+  height: 15px;
+  vertical-align: -8px;
+  margin: 0 10px 0 5px;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list .prompt-info p a.active {
+  border: 1px solid #d9534f;
+  background-color: #d9534f;
+}
+.main .center .min-height-default .content-box .prompt-box .prompt-list .prompt-info .close-prompt {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: normal;
+  font-size: 15px;
+  padding: 0 5px;
+}

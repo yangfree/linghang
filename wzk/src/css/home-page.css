@@ -1,0 +1,479 @@
+.website-topcontent {
+  display: none;
+  position: relative;
+  width: 100%;
+  line-height: 50px;
+  background-color: #0176c3;
+  color: #fff;
+}
+.website-topcontent span.topcontent-words {
+  padding: 0 5px;
+  color: orange;
+}
+.website-topcontent span.topcontent-keys {
+  padding: 2px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: orange;
+}
+.website-topcontent i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  cursor: pointer;
+}
+/*网站顶部*/
+.website-top {
+  width: 100%;
+  min-width: 1200px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.website-top .top-content {
+  padding: 0;
+  height: 100px;
+  max-height: 100px;
+  overflow: visible;
+}
+.website-top .top-content .top-logo {
+  margin-top: 20px;
+}
+.website-top .top-content .top-search {
+  color: #666;
+}
+.website-top .top-content .top-search .search-content {
+  margin-top: 40px;
+}
+.website-top .top-content .top-search .qr-code {
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+.website-nav {
+  width: 100%;
+  height: auto;
+}
+.website-nav .navbar-default {
+  margin-bottom: 0;
+  background-color: #0176c3;
+}
+.website-nav .navbar-default .nav-content a {
+  color: #fff;
+}
+.website-nav .navbar-default .nav-content .nav-tabs {
+  border: none;
+}
+.website-nav .navbar-default .nav-content .nav-tabs > li > a:hover,
+.website-nav .navbar-default .nav-content .nav-tabs > li > a:active,
+.website-nav .navbar-default .nav-content .nav-tabs > li > a:visited,
+.website-nav .navbar-default .nav-content .nav-tabs > li > a:focus {
+  background-color: transparent;
+}
+.website-nav .navbar-default .nav-content .nav-tabs li.actived {
+  height: 100%;
+  -moz-border-randiu: 5px;
+  -webkit-border-randiu: 5px;
+  border-radius: 5px;
+  background-color: #0099cc;
+}
+.website-nav .navbar-default .nav-content .text-right {
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  overflow: hidden;
+  font-size: 14px;
+  position: relative;
+}
+.website-nav .navbar-default .nav-content .text-right span.list-item {
+  display: block;
+}
+.main .website-banner {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  background-color: #683e3f;
+}
+.main .website-banner .website-banner-main {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+.main .website-banner .website-banner-main .banner-inner {
+  position: relative;
+  height: 405px;
+  max-height: 405px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group {
+  margin-bottom: 0;
+  height: 405px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group .list-group-item {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin-bottom: 0;
+  height: 45px;
+  padding: 0;
+  line-height: 45px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group .list-group-item a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 25px 0 15px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group .list-group-item a i {
+  position: absolute;
+  right: 15px;
+  top: 17px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group .list-group-item a:hover {
+  color: #0176c3;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group li.last {
+  position: relative;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group li.last .more-box {
+  width: 750px;
+  max-width: 780px;
+  height: 405px;
+  position: absolute;
+  top: -360px;
+  left: 200px;
+  background-color: #fff;
+  display: none;
+  z-index: 999;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group li.last .more-box .container-fluid {
+  overflow: hidden;
+  height: 405px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group li.last .more-box .container-fluid a {
+  float: left;
+  display: block;
+  color: #777;
+  position: relative;
+  width: 25%;
+  height: 45px;
+  padding: 0 15px;
+}
+.main .website-banner .website-banner-main .banner-inner .left-nav .list-group li.last .more-box .container-fluid a:hover {
+  border-bottom: 1px solid #0176c3;
+  color: #333;
+}
+.main .website-banner .website-banner-main .banner-inner .right-info {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 200px;
+}
+.main .website-banner .website-banner-main .banner-inner .right-info .panel {
+  color: #333;
+  font-size: 14px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.main .website-banner .website-banner-main .banner-inner .right-info .panel .panel-heading {
+  background-color: transparent;
+  border: none;
+}
+.main .website-banner .website-banner-main .banner-inner .right-info .panel .panel-footer {
+  background-color: transparent;
+  border: none;
+  color: #666;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  right: 200px;
+  bottom: 0;
+  width: 770px;
+  height: 405px;
+  overflow: hidden;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox ul {
+  position: relative;
+  width: 3080px;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox ul li {
+  float: left;
+  width: 770px;
+  height: 405px;
+  position: relative;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox ul li img {
+  width: 100%;
+  height: 100%;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox .spanBox {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -50px;
+  overflow: hidden;
+  z-index: 99;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox .spanBox span {
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #fff;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.main .website-banner .website-banner-main .banner-inner .slideBox .spanBox span.active {
+  background-color: orange;
+}
+.main .website-colleges {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+.main .website-colleges .statistics a {
+  color: #0075c2;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.main .website-class .class-content {
+  padding: 25px 0 0 0;
+}
+.main .website-class .class-content .class-title {
+  line-height: 45px;
+}
+.main .website-class .class-content .class-title h3 {
+  line-height: 45px;
+}
+.main .website-class .class-content .class-title .text-right a {
+  margin-left: 15px;
+}
+.main .website-class .class-content .class-title .text-right a.active {
+  color: #0074c1;
+}
+.main .website-class .class-content .class-body .row-item {
+  margin-bottom: 20px;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 {
+  padding: 15px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 h4 {
+  font-size: 15px;
+  line-height: 25px;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 .item-info {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 .item-number {
+  font-size: 14px;
+  color: #666;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 .item-number .text-right {
+  padding-left: 0;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 .item-number .text-right span {
+  margin-left: 10px;
+  color: #0074c1;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 .item-number .text-right span i {
+  font-style: normal;
+  margin-right: 5px;
+  color: #777;
+}
+.main .website-class .class-content .class-body .row-item .col-lg-3 .item-number .text-right span b {
+  font-weight: normal;
+}
+.main .website-advert {
+  margin-bottom: 25px;
+}
+.main .website-advert .advert-content {
+  padding: 0;
+}
+.main .website-advert .advert-content .advert-left {
+  padding-left: 0;
+}
+.main .website-advert .advert-content .advert-right {
+  padding-right: 0;
+}
+.main .website-advert .advert-content .img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  max-height: 150px;
+}
+.main .website-advert .advert-content .img img {
+  width: 100%;
+  height: 100%;
+}
+.main .website-teacher {
+  background: url("../images/home/teacher-bg.png") no-repeat center center;
+  padding: 25px 0;
+  background-size: cover;
+  height: auto;
+}
+.main .website-teacher .container {
+  position: relative;
+}
+.main .website-teacher .container .teacher-title {
+  line-height: 45px;
+}
+.main .website-teacher .container .teacher-title h3 {
+  line-height: 45px;
+  color: #fff;
+}
+.main .website-teacher .container .teacher-title .text-right a {
+  color: #fff;
+}
+.main .website-teacher .container .teacher-title .text-right a i {
+  vertical-align: -1px;
+  margin-left: 5px;
+}
+.main .website-teacher .container .teacher-content {
+  position: relative;
+  padding-top: 20px;
+  overflow: hidden;
+}
+.main .website-teacher .container .teacher-content .teacher-list {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: max-content;
+  padding: 50px 0 0 20px;
+  height: 300px;
+  overflow: hidden;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item {
+  position: relative;
+  width: 220px;
+  height: 250px;
+  background-color: #fff;
+  overflow: visible;
+  padding: 50px 15px 15px 15px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  margin-right: 8px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item .img {
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  margin-left: -46px;
+  width: 92px;
+  height: 92px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item .img img {
+  width: 100%;
+  height: 100%;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item .teacher-name {
+  color: #000;
+  padding-top: 15px;
+  font-size: 18px;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item .teacher-info {
+  color: #666;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item .teacher-description {
+  line-height: 25px;
+  font-size: 14px;
+  color: #000;
+  text-indent: 2em;
+}
+.main .website-teacher .container .teacher-content .teacher-list .teacher-list-item.last {
+  margin-right: 0;
+}
+.main .website-teacher .container .teacher-list-list-arrow {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 50px;
+}
+.main .website-teacher .container .teacher-list-left {
+  left: -80px;
+}
+.main .website-teacher .container .teacher-list-right {
+  right: -80px;
+}
+.main .website-company {
+  padding: 50px 0 35px 0;
+}
+.main .website-company .company-title {
+  line-height: 45px;
+}
+.main .website-company .company-title h3 {
+  line-height: 45px;
+}
+.main .website-company .company-title .text-right a i {
+  vertical-align: -1px;
+  margin-left: 5px;
+}
+.main .website-company .company-body {
+  margin-top: 25px;
+}
+.main .website-company .company-body .container-fluid {
+  margin-bottom: 10px;
+}
+.main .website-links {
+  background-color: #34393c;
+  color: #fff;
+}
+.main .website-links .company-adress,
+.main .website-links .company-links {
+  padding: 25px 0;
+}
+.main .website-links .company-adress dd,
+.main .website-links .company-links dd {
+  font-size: 14px;
+  margin-top: 15px;
+}
+.main .website-links .company-adress dd i,
+.main .website-links .company-links dd i {
+  margin-right: 10px;
+}
+.main .website-links .company-links dd {
+  position: relative;
+  margin-top: 10px;
+}
+.main .website-links .company-links dd em {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.main .website-links .company-links dd a {
+  padding-left: 15px;
+  color: #fff;
+}

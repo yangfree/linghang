@@ -1,0 +1,78 @@
+/* 折叠菜单样式 */
+.lh-menu {
+    font-size: 16px;
+    margin: 15px;
+    overflow: hidden;
+}
+
+.lh-menu .menu-first {
+    margin-bottom: 15px;
+}
+.lh-menu .menu-first .icon-xiaotuziCduan_,
+.lh-menu .menu-first .icon-xiaotuziCduan_1 {
+    color: #333;
+    font-size: 20px;
+}
+.lh-menu .menu-first .menu-title {
+    display: block;
+    border-right: 1px solid #ccc;
+}
+
+.lh-menu .menu-first li {
+    line-height: 40px;
+}
+.lh-menu .menu-first li.menu-first-li {
+    line-height: 50px;
+    margin-bottom: 15px;
+}
+.lh-menu .menu-first .bg-default {
+    position: relative;
+    background-color: #f5f5f5;
+    padding: 0 16px;
+}
+
+.lh-menu .menu-second {
+    width: 100%;
+    padding-top: 15px;
+    border-left: 1px solid #ccc;
+    display: none;
+}
+
+.lh-menu .menu-second .bg-default .menu-number {
+    position: absolute;
+    top: 0;
+    left: -35px;
+    color: #2998e2;
+}
+
+.lh-menu .menu-second .bg-default .bg-yuanquan {
+    position: absolute;
+    top: 13px;
+    left: -9px;
+    width: 18px;
+    height: 18px;
+    background: url("../images/circle.png") no-repeat;
+}
+
+.lh-menu .menu-third {
+    padding: 5px 15px;
+    font-size: 14px;
+    display: none;
+}
+
+.lh-menu .menu-third li {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.lh-menu .menu-third li.active,
+.lh-menu .menu-third li.active i {
+    background-color: #2998e2;
+    color: #fff;
+}
+
+.lh-menu .menu-third li i {
+    color: #999;
+}

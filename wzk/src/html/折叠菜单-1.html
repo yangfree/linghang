@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 网站描述和关键词  针对SEO -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 开发人员选项 -->
+    <link rel="author" href="../read/humans.txt">
+    <!-- 网站icon -->
+    <link rel="icon" href="../images/36x36.png">
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="../css/public/bootstrap.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="../iconfont/2019-01-14/iconfont.css">
+    <!-- 针对IE8及以下浏览器兼容H5标签和媒体查询 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .container-fluid {
+            margin-top: 20px;
+        }
+
+        .list-group-item {
+            border: none;
+        }
+
+        .first {
+            border: 1px solid #ccc;
+        }
+
+        .first .first-section {
+            position: relative;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .first .first-section .button-group {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .first .second .second-section {
+            color: #666;
+            font-weight: bold;
+        }
+
+        .first .second .third .third-section {
+            color: #777;
+        }
+
+        .first .icon-list {
+            margin-left: 15px;
+            position: relative;
+            display: none;
+        }
+
+        .first .click-box, .first .click-box {
+            position: absolute;
+            left: 1em;
+            top: 1.5em;
+            z-index: 99;
+            width: max-content;
+            background-color: #fff;
+            padding: 5px 10px;
+            list-style: none;
+            border: 1px solid #ccc;
+        }
+
+        .first .icon-jiahao, .first .icon-shanchu {
+            padding: 3px 5px;
+            color: #fff;
+            background-color: #2cabe6;
+        }
+
+        a, a:hover, a:visited, a:active, a:focus {
+            text-decoration: none;
+        }
+
+        .first .add-click .click-box li {
+            line-height: 20px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .first .add-click:hover {
+            background-color: #e7e7e7;
+        }
+
+        .first .add-click:hover .icon-list {
+            display: inline-block;
+        }
+
+        .first .click-active {
+            background-color: #e7e7e7;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="col-lg-10 col-lg-offset-2">
+        <ul class="list-group first" id="first">
+            <li class="list-group-item">
+                <div class="first-section add-click">
+                    <div>
+                        <span>第一章</span>
+                        <div class="icon-list icon-group">
+                            <i class="iconfont icon-jiahao"></i>
+                            <i class="iconfont icon-shanchu"></i>
+                            <ol class="click-box" style="display: none">
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn btn-success btn-xs">+ 节点</button>
+                        <button class="btn btn-primary btn-xs">+ 作业</button>
+                        <button class="btn btn-danger btn-xs">- 删除</button>
+                    </div>
+                </div>
+                <ul class="list-group second">
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <div class="icon-list icon-group">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <a class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li>1. 选项</li>
+                                    <li>2. 选项</li>
+                                    <li>3. 选项</li>
+                                </ol>
+                            </a>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <a class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li>1. 选项</li>
+                                    <li>2. 选项</li>
+                                    <li>3. 选项</li>
+                                </ol>
+                            </a>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <div class="first-section add-click">
+                    <span>第一章
+                        <div class="icon-list1 icon-list icon-group" style="display: none">
+                            <i class="iconfont icon-jiahao"></i>
+                            <i class="iconfont icon-shanchu"></i>
+                            <ol class="click-box" style="display: none">
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                            </ol>
+                        </div>
+                    </span>
+                    <div class="button-group">
+                        <button class="btn btn-success btn-xs">+ 节点</button>
+                        <button class="btn btn-primary btn-xs">+ 作业</button>
+                        <button class="btn btn-danger btn-xs">- 删除</button>
+                    </div>
+                </div>
+                <ul class="list-group second">
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <div class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <a class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li>1. 选项</li>
+                                    <li>2. 选项</li>
+                                    <li>3. 选项</li>
+                                </ol>
+                            </a>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <a class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li>1. 选项</li>
+                                    <li>2. 选项</li>
+                                    <li>3. 选项</li>
+                                </ol>
+                            </a>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <div class="first-section add-click">
+                    <span>第一章
+                        <div class="icon-list1 icon-list icon-group" style="display: none">
+                            <i class="iconfont icon-jiahao"></i>
+                            <i class="iconfont icon-shanchu"></i>
+                            <ol class="click-box" style="display: none">
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                                <li><a href="javascript: void 0">1. 选项</a></li>
+                            </ol>
+                        </div>
+                    </span>
+                    <div class="button-group">
+                        <button class="btn btn-success btn-xs">+ 节点</button>
+                        <button class="btn btn-primary btn-xs">+ 作业</button>
+                        <button class="btn btn-danger btn-xs">- 删除</button>
+                    </div>
+                </div>
+                <ul class="list-group second">
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <div class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                    <li><a href="javascript: void 0">1. 选项</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <a class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li>1. 选项</li>
+                                    <li>2. 选项</li>
+                                    <li>3. 选项</li>
+                                </ol>
+                            </a>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="second-section add-click">第一节
+                            <a class="icon-list2 icon-list icon-group" style="display: none">
+                                <i class="iconfont icon-jiahao"></i>
+                                <i class="iconfont icon-shanchu"></i>
+                                <ol class="click-box" style="display: none">
+                                    <li>1. 选项</li>
+                                    <li>2. 选项</li>
+                                    <li>3. 选项</li>
+                                </ol>
+                            </a>
+                        </div>
+                        <ul class="list-group third">
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="third-section">中国气象学会青年拖项目4.0——3.doc</div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 引入jquery 文件版本1.91 -->
+<script src="../js/jquery.js"></script>
+<!-- 引入bootstrap.js文件 -->
+<script src="../js/bootstrap.js"></script>
+<script type="text/javascript" charset="UTF-8">
+    $(function () {
+        // 设置初始状态
+        function init(id) {
+            $(id).children('.list-group-item').not(':first').children('ul').css('display', 'none');
+        }
+
+        init('#first');
+
+        /*
+        * params: 传进去一个类名或者id
+        * return： 至少两层的ul结构形成折叠菜单
+        * 用处: 菜单伸缩功能实现
+        */
+        function addClick(classOrId) {
+            $(classOrId).children('.list-group-item').each(function () {
+                $(this).css('cursor', 'pointer');
+                $(this).children('.add-click').on('click', function () {
+                    var blockOrNone = $(this).next('ul').css('display');
+                    if ($(this).next('ul') && blockOrNone === 'block') {
+                        $(this).next('ul').hide(300);
+                    } else {
+                        $(this).next('ul').show(300).parent().siblings().children('ul').hide(300);
+                    }
+                })
+            })
+        }
+
+        addClick('#first');
+        addClick('.second');
+
+        /*
+        *  params: idOrClass:id或者类名 className: 要生成的元素盒子类名
+        *  return: null
+        *  作用: 鼠标飘过事件
+        */
+        // function mouseAcross(idOrClass, className) {
+        //     $(idOrClass).find('.list-group-item').each(function () {
+        //         $(this).children('.add-click').hover(
+        //             // 鼠标移入事件
+        //             function () {
+        //                 $(this).find(className).css('display', 'inline-block');
+        //             },
+        //             // 鼠标移除事件
+        //             function () {
+        //                 $(this).find(className).css('display', 'none');
+        //             }
+        //         );
+        //     });
+        // }
+
+        // mouseAcross('#first', '.icon-list');
+
+        /*
+        * params: 传入类名
+        * return: 调用鼠标飘过之后的事件
+        * 用处: 点击加号触发的事件
+        */
+
+        function iconClick(className) {
+            var iconClassName = $(className).attr('class');
+            $(className).on('click', function (event) {
+                if (iconClassName === 'iconfont icon-jiahao') {
+                    var noneOrClocl = $(this).siblings('.click-box').css('display');
+                    if (noneOrClocl === 'none') {
+                        $('.click-box').css('display', 'block');
+                    } else {
+                        $('.click-box').css('display', 'none');
+                    }
+                }
+                if (iconClassName === 'iconfont icon-shanchu') {
+                    alert(2);
+                }
+                event.stopPropagation();
+            });
+        }
+
+        iconClick('.icon-jiahao');
+        iconClick('.icon-shanchu');
+
+        //    鼠标飘过变色  单对第二分类添加
+        // function changeBg() {
+        //     $(this).children('div :first').hover(
+        //         // 鼠标进入
+        //         function () {
+        //             $(this).css('backgroundColor', '#e7e7e7');
+        //         },
+        //         // 鼠标出去
+        //         function () {
+        //             $(this).css('backgroundColor', 'transparent');
+        //         }
+        //     );
+        //
+        // }
+
+        // $('.first').find('.list-group-item').each(changeBg);
+
+        // 鼠标点击有选中效果
+        function clickBg() {
+            $(this).children('div:first').on({
+                    click: function ($event) {
+                        var target = $event.target.className;
+                        // $(this).unbind('mouseleave');
+                        $(this).addClass('click-active');
+                        if (target === 'first-section add-click') {
+                            $(this).parent().siblings().children().removeClass('click-active').find('.icon-list');
+                        }
+                        if (target === 'second-section add-click') {
+
+                        }
+                        if (target === 'third-section add-click') {
+
+                        }
+                        $event.stopPropagation();
+                    },
+                }
+            )
+        }
+
+        $('#first').find('.list-group-item').each(clickBg);
+    })
+</script>
+</body>
+</html>
